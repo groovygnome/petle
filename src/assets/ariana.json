@@ -1,0 +1,397 @@
+{
+    "ALBUMS": [
+        { 
+            "title":"Yours Truly",
+            "releaseOrder":1,
+            "cover":"yourstruly.png",
+            "tracks":[
+                    {
+                        "trackTitle":"Honeymoon Avenue",
+                        "trackOrder":1,
+                        "trackFeatures":["None"],
+                        "trackLength": 339
+                    },
+                    {
+                        "trackTitle":"Baby I",
+                        "trackOrder":2,
+                        "trackFeatures":["None"],
+                        "trackLength": 197
+                    },
+                    {
+                        "trackTitle":"Right There",
+                        "trackOrder":3,
+                        "trackFeatures":["Big Sean"],
+                        "trackLength": 247
+                    },
+                    {
+                        "trackTitle":"Tattooed Heart",
+                        "trackOrder":4,
+                        "trackFeatures":["None"],
+                        "trackLength": 194
+                    },
+                    {
+                        "trackTitle":"Lovin' It",
+                        "trackOrder":5,
+                        "trackFeatures":["None"],
+                        "trackLength": 180
+                    },
+                    {
+                        "trackTitle":"Piano",
+                        "trackOrder":6,
+                        "trackFeatures":["None"],
+                        "trackLength": 234
+                    },
+                    {
+                        "trackTitle":"Daydreamin'",
+                        "trackOrder":7,
+                        "trackFeatures":["None"],
+                        "trackLength": 211
+                    },
+                    {
+                        "trackTitle":"The Way",
+                        "trackOrder":8,
+                        "trackFeatures":["Mac Miller"],
+                        "trackLength": 227
+                    },
+                    {
+                        "trackTitle":"You'll Never Know",
+                        "trackOrder":9,
+                        "trackFeatures":["None"],
+                        "trackLength": 214
+                    },
+                    {
+                        "trackTitle":"Almost Is Never Enough",
+                        "trackOrder":10,
+                        "trackFeatures":["Nathan Sykes"],
+                        "trackLength": 327
+                    },
+                    {
+                        "trackTitle":"Popular Song",
+                        "trackOrder":11,
+                        "trackFeatures":["MIKA"],
+                        "trackLength": 200
+                    },
+                    {
+                        "trackTitle":"Better Left Unsaid",
+                        "trackOrder":12,
+                        "trackFeatures":["None"],
+                        "trackLength": 211
+                    },
+                ]
+        },
+        { 
+            "title":"My Everything",
+            "releaseOrder":2,
+            "cover":"myeverything.png",
+            "tracks":[
+                    {
+                        "trackTitle":"Intro",
+                        "trackOrder":1,
+                        "trackFeatures":["None"]
+                        "trackLength": 79
+                    },
+                    {
+                        "trackTitle":"Problem",
+                        "trackOrder":2,
+                        "trackFeatures":["Iggy Azalea"],
+                        "trackLength":193
+                    },
+                    {
+                        "trackTitle":"One Last Time",
+                        "trackOrder":3,
+                        "trackFeatures":["None"],
+                        "trackLength":197
+                    },
+                    {
+                        "trackTitle":"Why Try",
+                        "trackOrder":4,
+                        "trackFeatures":["None"],
+                        "trackLength": 211
+                    },
+                    {
+                        "trackTitle":"Break Free",
+                        "trackOrder":5,
+                        "trackFeatures":["Zedd"],
+                        "trackLength": 214
+                    },
+                    {
+                        "trackTitle":"Best Mistake",
+                        "trackOrder":6,
+                        "trackFeatures":["Big Sean"],
+                        "trackLength": 233
+                    },
+                    {
+                        "trackTitle":"Be My Baby",
+                        "trackOrder":7,
+                        "trackFeatures":["Cashmere Cat"],
+                        "trackLength": 217
+                    },
+                    {
+                        "trackTitle":"Bring Your Heart Right Back",
+                        "trackOrder":8,
+                        "trackFeatures":["Childish Gambino"],
+                        "trackLength": 253
+                    },
+                    {
+                        "trackTitle":"Love Me Harder",
+                        "trackOrder":9,
+                        "trackFeatures":["The Weeknd"],
+                        "trackLength": 236
+                    },
+                    {
+                        "trackTitle":"Just A Little Bit Of Your Heart",
+                        "trackOrder":10,
+                        "trackFeatures":["None"],
+                        "trackLength": 
+                    },
+                    {
+                        "trackTitle":"Hands On Me",
+                        "trackOrder":11,
+                        "trackFeatures":["A$AP Ferg"]
+                    },
+                    {
+                        "trackTitle":"My Everything",
+                        "trackOrder":12,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Bang Bang",
+                        "trackOrder":13,
+                        "trackFeatures":["Nicki Minaj", "Jessie J"]
+                    },
+                    {
+                        "trackTitle":"Only One",
+                        "trackOrder":14,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"You Don't Know Me",
+                        "trackOrder":15,
+                        "trackFeatures":["None"]
+                    },
+                ]
+        },
+        { 
+            "title":"Dangerous Woman",
+            "releaseOrder":3,
+            "cover":"dangerouswoman.png",
+            "tracks":[
+                    {
+                        "trackTitle":"Moonlight",
+                        "trackOrder":1,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Dangerous Woman",
+                        "trackOrder":2,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Be Alright",
+                        "trackOrder":3,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Into You",
+                        "trackOrder":4,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Side To Side",
+                        "trackOrder":5,
+                        "trackFeatures":["Nicki Minaj"]
+                    },
+                    {
+                        "trackTitle":"Let Me Love You",
+                        "trackOrder":6,
+                        "trackFeatures":["Lil Wayne"]
+                    },
+                    {
+                        "trackTitle":"Greedy",
+                        "trackOrder":7,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Leave Me Lonely",
+                        "trackOrder":8,
+                        "trackFeatures":["Macy Gray"]
+                    },
+                    {
+                        "trackTitle":"Everyday",
+                        "trackOrder":9,
+                        "trackFeatures":["Future"]
+                    },
+                    {
+                        "trackTitle":"Sometimes",
+                        "trackOrder":10,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"I Don't Care",
+                        "trackOrder":11,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Bad Decisions",
+                        "trackOrder":12,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Touch It",
+                        "trackOrder":13,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Knew Better / Forever Boy",
+                        "trackOrder":14,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Thinkin' Bout You",
+                        "trackOrder":15,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Step On Up",
+                        "trackOrder":16,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Jason's Song (Gave It Away)",
+                        "trackOrder":17,
+                        "trackFeatures":["None"]
+                    },
+
+                ]
+        },
+        { 
+            "title":"Sweetener",
+            "releaseOrder":4,
+            "cover":"sweetener.png",
+            "tracks":[
+                    {
+                        "trackTitle":"raindrops (an angel cried)",
+                        "trackOrder":1,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Dangerous Woman",
+                        "trackOrder":2,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Be Alright",
+                        "trackOrder":3,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Into You",
+                        "trackOrder":4,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Side To Side",
+                        "trackOrder":5,
+                        "trackFeatures":["Nicki Minaj"]
+                    },
+                    {
+                        "trackTitle":"Let Me Love You",
+                        "trackOrder":6,
+                        "trackFeatures":["Lil Wayne"]
+                    },
+                    {
+                        "trackTitle":"Greedy",
+                        "trackOrder":7,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Leave Me Lonely",
+                        "trackOrder":8,
+                        "trackFeatures":["Macy Gray"]
+                    },
+                    {
+                        "trackTitle":"Everyday",
+                        "trackOrder":9,
+                        "trackFeatures":["Future"]
+                    },
+                    {
+                        "trackTitle":"Sometimes",
+                        "trackOrder":10,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"I Don't Care",
+                        "trackOrder":11,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Bad Decisions",
+                        "trackOrder":12,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Touch It",
+                        "trackOrder":13,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Knew Better / Forever Boy",
+                        "trackOrder":14,
+                        "trackFeatures":["None"]
+                    },
+                    {
+                        "trackTitle":"Thinkin' Bout You",
+                        "trackOrder":15,
+                        "trackFeatures":["None"]
+                    },
+        },
+        { 
+            "title":"Thank U, Next",
+            "releaseOrder":5,
+            "cover":"thankunext.png",
+            "tracks":[
+                    {
+                        "trackTitle":"",
+                        "trackOrder":1,
+                        "trackFeatures":[""]
+                    }
+                ]
+        },
+        { 
+            "title":"Positions",
+            "releaseOrder":6,
+            "cover":"positions.png",
+            "tracks":[
+                    {
+                        "trackTitle":"",
+                        "trackOrder":1,
+                        "trackFeatures":[""]
+                    }
+                ]
+        },
+        { 
+            "title":"Eternal Sunshine",
+            "releaseOrder":7,
+            "cover":"eternalsunshine.png",
+            "tracks":[
+                    {
+                        "trackTitle":"",
+                        "trackOrder":1,
+                        "trackFeatures":[""]
+                    }
+                ]
+        },
+        { 
+            "title":"Petal",
+            "releaseOrder":8,
+            "cover":"petal.png",
+            "tracks":[
+                    {
+                        "trackTitle":"",
+                        "trackOrder":1,
+                        "trackFeatures":[""]
+                    }
+                ]
+        },
+    ]
+}
