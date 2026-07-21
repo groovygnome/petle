@@ -1,6 +1,5 @@
-{
-    "ALBUMS": [
-        { 
+[
+        {
             "title":"Yours Truly",
             "releaseOrder":1,
             "cover":"yourstruly.png",
@@ -76,7 +75,7 @@
                         "trackOrder":12,
                         "trackFeatures":["None"],
                         "trackLength": 211
-                    },
+                    }
                 ]
         },
         { 
@@ -87,7 +86,7 @@
                     {
                         "trackTitle":"Intro",
                         "trackOrder":1,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
                         "trackLength": 79
                     },
                     {
@@ -142,33 +141,38 @@
                         "trackTitle":"Just A Little Bit Of Your Heart",
                         "trackOrder":10,
                         "trackFeatures":["None"],
-                        "trackLength": 
+                        "trackLength":  232
                     },
                     {
                         "trackTitle":"Hands On Me",
                         "trackOrder":11,
-                        "trackFeatures":["A$AP Ferg"]
+                        "trackFeatures":["A$AP Ferg"],
+                        "trackLength": 192
                     },
                     {
                         "trackTitle":"My Everything",
                         "trackOrder":12,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 168
                     },
                     {
                         "trackTitle":"Bang Bang",
                         "trackOrder":13,
-                        "trackFeatures":["Nicki Minaj", "Jessie J"]
+                        "trackFeatures":["Nicki Minaj", "Jessie J"],
+                        "trackLength": 199
                     },
                     {
-                        "trackTitle":"Only One",
+                        "trackTitle":"Only 1",
                         "trackOrder":14,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 193
                     },
                     {
                         "trackTitle":"You Don't Know Me",
                         "trackOrder":15,
-                        "trackFeatures":["None"]
-                    },
+                        "trackFeatures":["None"],
+                        "trackLength": 233
+                    }
                 ]
         },
         { 
@@ -179,89 +183,105 @@
                     {
                         "trackTitle":"Moonlight",
                         "trackOrder":1,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 202
                     },
                     {
                         "trackTitle":"Dangerous Woman",
                         "trackOrder":2,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 235
                     },
                     {
                         "trackTitle":"Be Alright",
                         "trackOrder":3,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 179
                     },
                     {
                         "trackTitle":"Into You",
                         "trackOrder":4,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 244
                     },
                     {
                         "trackTitle":"Side To Side",
                         "trackOrder":5,
-                        "trackFeatures":["Nicki Minaj"]
+                        "trackFeatures":["Nicki Minaj"],
+                        "trackLength": 226
                     },
                     {
                         "trackTitle":"Let Me Love You",
                         "trackOrder":6,
-                        "trackFeatures":["Lil Wayne"]
+                        "trackFeatures":["Lil Wayne"],
+                        "trackLength": 223
                     },
                     {
                         "trackTitle":"Greedy",
                         "trackOrder":7,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 214
                     },
                     {
                         "trackTitle":"Leave Me Lonely",
                         "trackOrder":8,
-                        "trackFeatures":["Macy Gray"]
+                        "trackFeatures":["Macy Gray"],
+                        "trackLength": 229
                     },
                     {
                         "trackTitle":"Everyday",
                         "trackOrder":9,
-                        "trackFeatures":["Future"]
+                        "trackFeatures":["Future"],
+                        "trackLength": 194
                     },
                     {
                         "trackTitle":"Sometimes",
                         "trackOrder":10,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 226
                     },
                     {
                         "trackTitle":"I Don't Care",
                         "trackOrder":11,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 178
                     },
                     {
                         "trackTitle":"Bad Decisions",
                         "trackOrder":12,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 226
                     },
                     {
                         "trackTitle":"Touch It",
                         "trackOrder":13,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 260
                     },
                     {
                         "trackTitle":"Knew Better / Forever Boy",
                         "trackOrder":14,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 299
                     },
                     {
                         "trackTitle":"Thinkin' Bout You",
                         "trackOrder":15,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 200
                     },
                     {
                         "trackTitle":"Step On Up",
                         "trackOrder":16,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 180
                     },
                     {
                         "trackTitle":"Jason's Song (Gave It Away)",
                         "trackOrder":17,
-                        "trackFeatures":["None"]
-                    },
-
+                        "trackFeatures":["None"],
+                        "trackLength": 264
+                    }
                 ]
         },
         { 
@@ -272,78 +292,94 @@
                     {
                         "trackTitle":"raindrops (an angel cried)",
                         "trackOrder":1,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 37
                     },
                     {
-                        "trackTitle":"Dangerous Woman",
+                        "trackTitle":"blazed",
                         "trackOrder":2,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["Pharrell Williams"],
+                        "trackLength": 196
                     },
                     {
-                        "trackTitle":"Be Alright",
+                        "trackTitle":"the light is coming",
                         "trackOrder":3,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["Nicki Minaj"],
+                        "trackLength": 228
                     },
                     {
-                        "trackTitle":"Into You",
+                        "trackTitle":"R.E.M",
                         "trackOrder":4,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 245
                     },
                     {
-                        "trackTitle":"Side To Side",
+                        "trackTitle":"God is a woman",
                         "trackOrder":5,
-                        "trackFeatures":["Nicki Minaj"]
+                        "trackFeatures":["None"],
+                        "trackLength": 197
                     },
                     {
-                        "trackTitle":"Let Me Love You",
+                        "trackTitle":"sweetener",
                         "trackOrder":6,
-                        "trackFeatures":["Lil Wayne"]
+                        "trackFeatures":["None"],
+                        "trackLength": 208
                     },
                     {
-                        "trackTitle":"Greedy",
+                        "trackTitle":"successful",
                         "trackOrder":7,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 227
                     },
                     {
-                        "trackTitle":"Leave Me Lonely",
+                        "trackTitle":"everytime",
                         "trackOrder":8,
-                        "trackFeatures":["Macy Gray"]
+                        "trackFeatures":["None"],
+                        "trackLength": 172
                     },
                     {
-                        "trackTitle":"Everyday",
+                        "trackTitle":"breathin",
                         "trackOrder":9,
-                        "trackFeatures":["Future"]
+                        "trackFeatures":["None"],
+                        "trackLength": 198
                     },
                     {
-                        "trackTitle":"Sometimes",
+                        "trackTitle":"no tears left to cry",
                         "trackOrder":10,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 205
                     },
                     {
-                        "trackTitle":"I Don't Care",
+                        "trackTitle":"borderline",
                         "trackOrder":11,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["Missy Elliott"],
+                        "trackLength": 177
                     },
                     {
-                        "trackTitle":"Bad Decisions",
+                        "trackTitle":"better off",
                         "trackOrder":12,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 171
                     },
                     {
-                        "trackTitle":"Touch It",
+                        "trackTitle":"goodnight n go",
                         "trackOrder":13,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 189
                     },
                     {
-                        "trackTitle":"Knew Better / Forever Boy",
+                        "trackTitle":"pete davidson",
                         "trackOrder":14,
-                        "trackFeatures":["None"]
+                        "trackFeatures":["None"],
+                        "trackLength": 73
                     },
                     {
-                        "trackTitle":"Thinkin' Bout You",
+                        "trackTitle":"get well soon",
                         "trackOrder":15,
-                        "trackFeatures":["None"]
-                    },
+                        "trackFeatures":["None"],
+                        "trackLength": 322
+                    }
+            ]
         },
         { 
             "title":"Thank U, Next",
@@ -351,11 +387,78 @@
             "cover":"thankunext.png",
             "tracks":[
                     {
-                        "trackTitle":"",
+                        "trackTitle":"imagine",
                         "trackOrder":1,
-                        "trackFeatures":[""]
+                        "trackFeatures":["None"],
+                        "trackLength": 212
+                    },
+                    {
+                        "trackTitle":"needy",
+                        "trackOrder":2,
+                        "trackFeatures":["None"],
+                        "trackLength": 171
+                    },
+                    {
+                        "trackTitle":"NASA",
+                        "trackOrder":3,
+                        "trackFeatures":["None"],
+                        "trackLength": 182
+                    },
+                    {
+                        "trackTitle":"bloodline",
+                        "trackOrder":4,
+                        "trackFeatures":["None"],
+                        "trackLength": 216
+                    },
+                    {
+                        "trackTitle":"fake smile",
+                        "trackOrder":5,
+                        "trackFeatures":["None"],
+                        "trackLength": 208
+                    },
+                    {
+                        "trackTitle":"bad idea",
+                        "trackOrder":6,
+                        "trackFeatures":["None"],
+                        "trackLength": 267
+                    },
+                    {
+                        "trackTitle":"make up",
+                        "trackOrder":7,
+                        "trackFeatures":["None"],
+                        "trackLength": 140
+                    },
+                    {
+                        "trackTitle":"ghostin",
+                        "trackOrder":8,
+                        "trackFeatures":["None"],
+                        "trackLength": 271
+                    },
+                    {
+                        "trackTitle":"in my head",
+                        "trackOrder":9,
+                        "trackFeatures":["None"],
+                        "trackLength": 222
+                    },
+                    {
+                        "trackTitle":"7 rings",
+                        "trackOrder":10,
+                        "trackFeatures":["None"],
+                        "trackLength": 178
+                    },
+                    {
+                        "trackTitle":"thank u, next",
+                        "trackOrder":11,
+                        "trackFeatures":["None"],
+                        "trackLength": 207
+                    },
+                    {
+                        "trackTitle":"break up with your girlfriend, i'm bored",
+                        "trackOrder":12,
+                        "trackFeatures":["None"],
+                        "trackLength": 190
                     }
-                ]
+            ]
         },
         { 
             "title":"Positions",
@@ -363,9 +466,118 @@
             "cover":"positions.png",
             "tracks":[
                     {
-                        "trackTitle":"",
+                        "trackTitle":"shut up",
                         "trackOrder":1,
-                        "trackFeatures":[""]
+                        "trackFeatures":["None"],
+                        "trackLength": 157
+                    },
+                    {
+                        "trackTitle":"34+35",
+                        "trackOrder":2,
+                        "trackFeatures":["None"],
+                        "trackLength":173
+                    },
+                    {
+                        "trackTitle":"motive",
+                        "trackOrder":3,
+                        "trackFeatures":["Doja Cat"],
+                        "trackLength":167
+                    },
+                    {
+                        "trackTitle":"just like magic",
+                        "trackOrder":4,
+                        "trackFeatures":["None"],
+                        "trackLength": 149
+                    },
+                    {
+                        "trackTitle":"off the table",
+                        "trackOrder":5,
+                        "trackFeatures":["The Weeknd"],
+                        "trackLength": 239
+                    },
+                    {
+                        "trackTitle":"six thirty",
+                        "trackOrder":6,
+                        "trackFeatures":["None"],
+                        "trackLength": 183
+                    },
+                    {
+                        "trackTitle":"safety net",
+                        "trackOrder":7,
+                        "trackFeatures":["Ty Dolla $ign"],
+                        "trackLength": 208
+                    },
+                    {
+                        "trackTitle":"my hair",
+                        "trackOrder":8,
+                        "trackFeatures":["None"],
+                        "trackLength": 158
+                    },
+                    {
+                        "trackTitle":"nasty",
+                        "trackOrder":9,
+                        "trackFeatures":["None"],
+                        "trackLength": 200
+                    },
+                    {
+                        "trackTitle":"west side",
+                        "trackOrder":10,
+                        "trackFeatures":["None"],
+                        "trackLength":  132
+                    },
+                    {
+                        "trackTitle":"love language",
+                        "trackOrder":11,
+                        "trackFeatures":["None"],
+                        "trackLength": 179
+                    },
+                    {
+                        "trackTitle":"positions",
+                        "trackOrder":12,
+                        "trackFeatures":["None"],
+                        "trackLength": 172
+                    },
+                    {
+                        "trackTitle":"obvious",
+                        "trackOrder":13,
+                        "trackFeatures":["None"],
+                        "trackLength": 146
+                    },
+                    {
+                        "trackTitle":"pov",
+                        "trackOrder":14,
+                        "trackFeatures":["None"],
+                        "trackLength": 201
+                    },
+                    {
+                        "trackTitle":"someone like u - interlude",
+                        "trackOrder":15,
+                        "trackFeatures":["None"],
+                        "trackLength": 76
+                    },
+                    {
+                        "trackTitle":"test drive",
+                        "trackOrder":16,
+                        "trackFeatures":["None"],
+                        "trackLength": 122
+                    },
+                    {
+                        "trackTitle":"34+35 Remix",
+                        "trackOrder":17,
+                        "trackFeatures":["Doja Cat", "Megan Thee Stallion"],
+                        "trackLength": 182
+                    },
+                    {
+                        "trackTitle":"worst behavior",
+                        "trackOrder":18,
+                        "trackFeatures":["None"],
+                        "trackLength": 124
+                    },
+                    {
+                        "trackTitle":"main thing",
+                        "trackOrder":19,
+                        "trackFeatures":["None"],
+                        "trackLength": 129
                     }
                 ]
         },
@@ -375,9 +587,118 @@
             "cover":"eternalsunshine.png",
             "tracks":[
                     {
-                        "trackTitle":"",
+                        "trackTitle":"intro (end of the world)",
                         "trackOrder":1,
-                        "trackFeatures":[""]
+                        "trackFeatures":["None"],
+                        "trackLength": 92
+                    },
+                    {
+                        "trackTitle":"bye",
+                        "trackOrder":2,
+                        "trackFeatures":["None"],
+                        "trackLength":164
+                    },
+                    {
+                        "trackTitle":"don't wanna break up again",
+                        "trackOrder":3,
+                        "trackFeatures":["None"],
+                        "trackLength":174
+                    },
+                    {
+                        "trackTitle":"Saturn Returns Interlude",
+                        "trackOrder":4,
+                        "trackFeatures":["None"],
+                        "trackLength": 42
+                    },
+                    {
+                        "trackTitle":"eternal sunshine",
+                        "trackOrder":5,
+                        "trackFeatures":["None"],
+                        "trackLength": 210
+                    },
+                    {
+                        "trackTitle":"supernatural",
+                        "trackOrder":6,
+                        "trackFeatures":["None"],
+                        "trackLength": 163
+                    },
+                    {
+                        "trackTitle":"true story",
+                        "trackOrder":7,
+                        "trackFeatures":["None"],
+                        "trackLength": 163
+                    },
+                    {
+                        "trackTitle":"the boy is mine",
+                        "trackOrder":8,
+                        "trackFeatures":["None"],
+                        "trackLength": 173
+                    },
+                    {
+                        "trackTitle":"yes, and?",
+                        "trackOrder":9,
+                        "trackFeatures":["None"],
+                        "trackLength": 214
+                    },
+                    {
+                        "trackTitle":"we can't be friends (wait for your love)",
+                        "trackOrder":10,
+                        "trackFeatures":["None"],
+                        "trackLength":  228
+                    },
+                    {
+                        "trackTitle":"i wish i hated you",
+                        "trackOrder":11,
+                        "trackFeatures":["None"],
+                        "trackLength": 153
+                    },
+                    {
+                        "trackTitle":"imperfect for you",
+                        "trackOrder":12,
+                        "trackFeatures":["None"],
+                        "trackLength": 182
+                    },
+                    {
+                        "trackTitle":"ordinary things",
+                        "trackOrder":13,
+                        "trackFeatures":["Nonna"],
+                        "trackLength": 168
+                    },
+                    {
+                        "trackTitle":"intro (end of the world) - extended",
+                        "trackOrder":14,
+                        "trackFeatures":["None"],
+                        "trackLength": 161
+                    },
+                    {
+                        "trackTitle":"twilight zone",
+                        "trackOrder":15,
+                        "trackFeatures":["None"],
+                        "trackLength": 198
+                    },
+                    {
+                        "trackTitle":"warm",
+                        "trackOrder":16,
+                        "trackFeatures":["None"],
+                        "trackLength": 201
+                    },
+                    {
+                        "trackTitle":"dandelion",
+                        "trackOrder":17,
+                        "trackFeatures":["None"],
+                        "trackLength": 204
+                    },
+                    {
+                        "trackTitle":"past life",
+                        "trackOrder":18,
+                        "trackFeatures":["None"],
+                        "trackLength": 215
+                    },
+                    {
+                        "trackTitle":"Hampstead",
+                        "trackOrder":19,
+                        "trackFeatures":["None"],
+                        "trackLength": 216
                     }
                 ]
         },
@@ -387,11 +708,77 @@
             "cover":"petal.png",
             "tracks":[
                     {
-                        "trackTitle":"",
+                        "trackTitle":"kiss me",
                         "trackOrder":1,
-                        "trackFeatures":[""]
+                        "trackFeatures":["None"],
+                        "trackLength": 0
+                    },
+                    {
+                        "trackTitle":"hate that i made you love me",
+                        "trackOrder":2,
+                        "trackFeatures":["None"],
+                        "trackLength":198
+                    },
+                    {
+                        "trackTitle":"petal",
+                        "trackOrder":3,
+                        "trackFeatures":["None"],
+                        "trackLength":0
+                    },
+                    {
+                        "trackTitle":"stay",
+                        "trackOrder":4,
+                        "trackFeatures":["None"],
+                        "trackLength": 0
+                    },
+                    {
+                        "trackTitle":"oh well",
+                        "trackOrder":5,
+                        "trackFeatures":["None"],
+                        "trackLength": 0
+                    },
+                    {
+                        "trackTitle":"big feelings",
+                        "trackOrder":6,
+                        "trackFeatures":["None"],
+                        "trackLength": 0
+                    },
+                    {
+                        "trackTitle":"freak",
+                        "trackOrder":7,
+                        "trackFeatures":["None"],
+                        "trackLength": 0
+                    },
+                    {
+                        "trackTitle":"warning signs (interlude)",
+                        "trackOrder":8,
+                        "trackFeatures":["None"],
+                        "trackLength": 0
+                    },
+                    {
+                        "trackTitle":"like i do",
+                        "trackOrder":9,
+                        "trackFeatures":["None"],
+                        "trackLength": 0
+                    },
+                    {
+                        "trackTitle":"never get over me",
+                        "trackOrder":10,
+                        "trackFeatures":["None"],
+                        "trackLength": 0
+                    },
+                    {
+                        "trackTitle":"bad thing (bunny hop)",
+                        "trackOrder":11,
+                        "trackFeatures":["None"],
+                        "trackLength": 0
+                    },
+                    {
+                        "trackTitle": "nowhere, nobody",
+                        "trackOrder":12,
+                        "trackFeatures":["None"],
+                        "trackLength": 0
                     }
                 ]
-        },
-    ]
-}
+        }
+]

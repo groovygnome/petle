@@ -1,122 +1,89 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
+import arianaJSON from './assets/ariana.json'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [attempts, setAttempts] = useState([]);
+  const [guess, setGuess] = useState('');
+  const [filter, setFilter] = useState(-1);
+  const [answer, setAnswer] = useState(calculateAnswer(arianaJSON));
+  const [correct, setCorrect] = useState(false);
 
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+  console.log(answer);
 
-      <div className="ticks"></div>
+  let arianArray = arianaJSON;
+  if (filter != -1) {
+    arianArray = arianArray.filter(album => album.releaseOrder == filter);
+  }
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+  let selectArray = [];
+  for (let albumKey in arianArray) {
+    let album = arianArray[albumKey]
+    for (let trackKey in album.tracks) {
+      let track = album.tracks[trackKey];
+      selectArray.push(<option key={album.releaseOrder + '#' + track.trackOrder} value={album.releaseOrder + '#' + track.trackOrder}>{track.trackTitle}</option>);
+    }
+  }
+
+  function guessSong(e) {
+    let trackInfo = getTrackInfo(e.target.value, arianaJSON);
+    setGuess(trackInfo);
+    setAttempts(attempts + 1);
+
+    if (trackInfo.trackKey === answer.trackKey) {
+      setCorrect(true);
+    } else {
+
+    }
+  }
+
+  if (!correct && attempts.length < 8) {
+    return (
+      <>
+        <form>
+          <label htmlFor='filter'>Filter to an Album:</label>
+          <select onChange={(e) => setFilter(e.target.value)}>
+            <option key={-1} value={-1}></option>
+            {arianaJSON.map((album) => <option key={album.releaseOrder} value={album.releaseOrder}>{album.title}</option>)}
+          </select>
+          <label htmlFor='guess'>Guess a song:</label>
+          <select onChange={guessSong} placeholder={`Guess ${attempts.length}/8 - type any Ari song...`} >
+            {selectArray}
+          </select>
+        </form >
+      </>
+    )
+  } else if (correct) {
+    return (
+      <>
+        <p>yay u won</p>
+      </>
+    )
+  } else if (!correct && attempts.length >= 8) {
+    return (
+      <>
+        <p>dang u lost</p>
+      </>
+    )
+  }
+}
+
+function getTrackInfo(key, disc) {
+  key = key.split('#');
+  let albumInd = Number(key[0]);
+  let album = disc[albumInd];
+  let trackInd = Number(key[1]);
+  let track = album.tracks[trackInd];
+  return { trackKey: albumInd + '#' + trackInd, trackTitle: track.trackTitle, album: album.title, features: track.trackFeatures }
+}
+
+function calculateAnswer(disc) {
+  let albumInd = Math.floor(Math.random() * disc.length);
+  let album = disc[albumInd];
+  let trackInd = Math.floor(Math.random() * album.tracks.length);
+  let track = album.tracks[trackInd];
+  return { trackKey: (albumInd + 1) + '#' + (trackInd + 1), trackTitle: track.trackTitle, album: album.title, features: track.trackFeatures }
 }
 
 export default App
