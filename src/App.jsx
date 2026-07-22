@@ -4,7 +4,6 @@ import arianaJSON from './assets/ariana.json'
 
 function App() {
   const [attempts, setAttempts] = useState([]);
-  const [guess, setGuess] = useState('');
   const [filter, setFilter] = useState(-1);
   const [answer, setAnswer] = useState(calculateAnswer(arianaJSON));
   const [correct, setCorrect] = useState(false);
