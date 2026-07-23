@@ -28,6 +28,12 @@ function App() {
   function guessSong(e) {
     if (e.target.value === -1) return;
     let trackInfo = getTrackInfo(e.target.value, arianaJSON);
+    let matchedFeatures = 0;
+    trackInfo.features.forEach((featureGuess) => {
+      answer.features.forEach((featureAnswer) => {
+        if (featureGuess === featureAnswer) matchedFeatures++;
+      });
+    });
     let newAttempt = (
       <div className='attempt' key={attempts.length + 1}>
         <p className={trackInfo.trackTitle === answer.trackTitle ? 'correct' : 'incorrect'}>{trackInfo.trackTitle}</p>
@@ -82,8 +88,12 @@ function App() {
               : '↑'}
           </p>
         </div>
-        <div className={`attempt-features`}>
-          {trackInfo.features}
+        <div className={`attempt-features ${matchedFeatures === answer.features.length
+          ? 'correct'
+          : matchedFeatures >= 1
+            ? 'almost'
+            : 'incorrect'}`}>
+          {trackInfo.features.map((feature, index) => <p key={index}>{feature}</p>)}
         </div>
 
       </div>

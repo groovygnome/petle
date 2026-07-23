@@ -1,12 +1,36 @@
+*{
+  margin: 0;
+  padding:0;
+}
+
+#root{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+}
+
 .attempts{
   text-align: center;
+  width: 40vw;
 }
 
 .attempt{
   display:grid;
   grid-template-columns: 2fr 2fr 1fr 1fr 2fr;
-  gap: 10px;
+  gap: 2rem;
+  padding-bottom: 2rem;
 }
+
+.attempt > *{
+  border-radius: 1rem;
+}
+
+.attempt > p, .attempt-features, .attempt-track{
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+} 
 
 .correct{
   background-color: green;
