@@ -8,6 +8,11 @@
   padding:0;
 }
 
+.guessInput{
+  display:flex;
+  flex-direction: column;
+}
+
 body{
   background-image: url(./assets/background.png);
   background-size: cover;

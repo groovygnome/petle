@@ -1,17 +1,33 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import arianaJSON from './assets/ariana.json'
-import db from './db/dailies'
 
 function App() {
   const [attempts, setAttempts] = useState([]);
   const [filter, setFilter] = useState(-1);
-  const [answer, setAnswer] = useState(calculateAnswer(arianaJSON));
+  const [answer, setAnswer] = useState({});
   const [correct, setCorrect] = useState(false);
 
   useEffect(() => {
+    const getPetle = async () => {
+      let today = new Date();
+      let date = today.getFullYear() + '-'
+        + String(today.getMonth() + 1).padStart(2, '0') + '-'
+        + String(today.getDate()).padStart(2, '0');
 
+      let res = await fetch(`/api/dailies/${date}`);
+      let todayAnswer = await res.json();
 
+      if (todayAnswer.length === 0) {
+        let answerCode = calculateAnswer(arianaJSON);
+        let encoded = encodeURIComponent(answerCode);
+        let res = await fetch(`/api/dailies/${date}/${encoded}`, { method: 'POST' });
+        todayAnswer = await res.json();
+      }
+      setAnswer(getTrackInfo(todayAnswer[0].answer, arianaJSON));
+    }
+
+    getPetle();
   }, []);
 
   let arianArray = arianaJSON;
@@ -113,7 +129,7 @@ function App() {
   if (!correct && attempts.length < 8) {
     return (
       <>
-        <form>
+        <form className='guessInput'>
           <label htmlFor='filter'>filter to an album:</label>
           <select onChange={(e) => setFilter(e.target.value)}>
             <option key={-1} value={-1}></option>
@@ -128,7 +144,7 @@ function App() {
         <div className='attempts'>
           {attempts}
         </div>
-        <button onClick={() => db.deleteDailies()}>delete all db entries</button>
+        <button onClick={async () => await fetch('/api/dailies/delete', { method: 'DELETE' })}>delete all db entries</button>
       </>
     )
   } else if (correct) {
@@ -159,8 +175,9 @@ function calculateAnswer(disc) {
   let albumInd = Math.floor(Math.random() * disc.length);
   let album = disc[albumInd];
   let trackInd = Math.floor(Math.random() * album.tracks.length);
-  let track = album.tracks[trackInd];
-  return { trackKey: (albumInd + 1) + '#' + (trackInd + 1), albumNum: albumInd + 1, trackNum: trackInd + 1, trackTitle: track.trackTitle, features: track.trackFeatures, trackLength: track.trackLength }
+  //let track = album.tracks[trackInd];
+  //return { trackKey: (albumInd + 1) + '#' + (trackInd + 1), albumNum: albumInd + 1, trackNum: trackInd + 1, trackTitle: track.trackTitle, features: track.trackFeatures, trackLength: track.trackLength }
+  return (albumInd + 1) + '#' + (trackInd + 1);
 }
 
 export default App
