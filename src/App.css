@@ -1,6 +1,18 @@
+@font-face{
+  font-family: stixtwotext;
+  src: url(./assets/stixtwotext.ttf);
+}
+
 *{
   margin: 0;
   padding:0;
+}
+
+body{
+  background-image: url(./assets/background.png);
+  background-size: cover;
+  color: #f6f6f6;
+  font-family: stixtwotext, sans-serif;
 }
 
 #root{

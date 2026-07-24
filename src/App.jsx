@@ -147,7 +147,7 @@ function getTrackInfo(key, disc) {
   let album = disc[albumInd - 1];
   let trackInd = Number(key[1]);
   let track = album.tracks[trackInd - 1];
-  return { trackKey: albumInd + '#' + trackInd, albumNum: albumInd, trackNum: trackInd, img: album.cover, trackTitle: track.trackTitle, features: track.trackFeatures, trackLength: track.trackLength }
+  return { trackKey: albumInd - 1 + '#' + trackInd - 1, albumNum: albumInd - 1, trackNum: trackInd - 1, img: album.cover, trackTitle: track.trackTitle, features: track.trackFeatures, trackLength: track.trackLength }
 }
 
 function calculateAnswer(disc) {
