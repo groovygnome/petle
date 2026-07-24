@@ -45,15 +45,17 @@ body{
 } 
 
 .correct{
-  background-color: green;
+  background-color: #699273;
+  color: 
 }
 
 .incorrect{
-  background-color: grey;
+  background-color: #4e4e4e;
 }
 
 .almost{
-  background-color:yellow;
+  background-color: #e7ca85;
+  color: black; 
 }
 
 .attempt-album{

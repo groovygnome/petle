@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import arianaJSON from './assets/ariana.json'
+import db from './db/dailies'
 
 function App() {
   const [attempts, setAttempts] = useState([]);
@@ -8,7 +9,10 @@ function App() {
   const [answer, setAnswer] = useState(calculateAnswer(arianaJSON));
   const [correct, setCorrect] = useState(false);
 
-  console.log(answer);
+  useEffect(() => {
+
+
+  }, []);
 
   let arianArray = arianaJSON;
   if (filter != -1) {
@@ -110,13 +114,13 @@ function App() {
     return (
       <>
         <form>
-          <label htmlFor='filter'>Filter to an Album:</label>
+          <label htmlFor='filter'>filter to an album:</label>
           <select onChange={(e) => setFilter(e.target.value)}>
             <option key={-1} value={-1}></option>
             {arianaJSON.map((album) => <option key={album.releaseOrder} value={album.releaseOrder}>{album.title}</option>)}
           </select>
-          <label htmlFor='guess'>Guess a song:</label>
-          <select onChange={guessSong} placeholder={`Guess ${attempts.length}/8 - type any Ari song...`} >
+          <label htmlFor='guess'>guess a song:</label>
+          <select onChange={guessSong} placeholder={`guess ${attempts.length}/8 - type any ari song...`} >
             <option key={-1} value={-1}></option>
             {selectArray}
           </select>
@@ -124,6 +128,7 @@ function App() {
         <div className='attempts'>
           {attempts}
         </div>
+        <button onClick={() => db.deleteDailies()}>delete all db entries</button>
       </>
     )
   } else if (correct) {
@@ -147,7 +152,7 @@ function getTrackInfo(key, disc) {
   let album = disc[albumInd - 1];
   let trackInd = Number(key[1]);
   let track = album.tracks[trackInd - 1];
-  return { trackKey: albumInd - 1 + '#' + trackInd - 1, albumNum: albumInd - 1, trackNum: trackInd - 1, img: album.cover, trackTitle: track.trackTitle, features: track.trackFeatures, trackLength: track.trackLength }
+  return { trackKey: albumInd + '#' + trackInd, albumNum: albumInd - 1, trackNum: trackInd - 1, img: album.cover, trackTitle: track.trackTitle, features: track.trackFeatures, trackLength: track.trackLength }
 }
 
 function calculateAnswer(disc) {
