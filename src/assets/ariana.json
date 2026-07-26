@@ -585,6 +585,7 @@
             "title":"Eternal Sunshine",
             "releaseOrder":7,
             "cover":"./assets/eternalsunshine.png",
+            "altcover":"./assets/brighterdays.png",
             "tracks":[
                     {
                         "trackTitle":"intro (end of the world)",

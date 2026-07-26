@@ -8,6 +8,19 @@ function App() {
   const [answer, setAnswer] = useState({});
   const [correct, setCorrect] = useState(false);
 
+  if (localStorage.length === 0) {
+    localStorage.setItem('streak', 0);
+    localStorage.setItem(1, 0);
+    localStorage.setItem(2, 0);
+    localStorage.setItem(3, 0);
+    localStorage.setItem(4, 0);
+    localStorage.setItem(5, 0);
+    localStorage.setItem(6, 0);
+    localStorage.setItem(7, 0);
+    localStorage.setItem(8, 0);
+    localStorage.setItem('X', 0);
+  }
+
   useEffect(() => {
     const getPetle = async () => {
       let today = new Date();
@@ -100,7 +113,7 @@ function App() {
             : Math.abs(trackInfo.trackLength - answer.trackLength) <= 30
               ? 'almost lessthan'
               : 'lessthan incorrect'} `}>
-          <p>{`${Math.floor(trackInfo.trackLength / 60)} : ${trackInfo.trackLength % 60}`}</p>
+          <p>{`${Math.floor(trackInfo.trackLength / 60)} : ${String(trackInfo.trackLength % 60).padStart(2, '0')}`}</p>
           <p>{trackInfo.trackLength === answer.trackLength
             ? '='
             : trackInfo.trackLength > answer.trackLength
@@ -126,40 +139,36 @@ function App() {
     }
   }
 
-  if (!correct && attempts.length < 8) {
-    return (
-      <>
-        <form className='guessInput'>
-          <label htmlFor='filter'>filter to an album:</label>
-          <select onChange={(e) => setFilter(e.target.value)}>
-            <option key={-1} value={-1}></option>
-            {arianaJSON.map((album) => <option key={album.releaseOrder} value={album.releaseOrder}>{album.title}</option>)}
-          </select>
-          <label htmlFor='guess'>guess a song:</label>
-          <select onChange={guessSong} placeholder={`guess ${attempts.length}/8 - type any ari song...`} >
-            <option key={-1} value={-1}></option>
-            {selectArray}
-          </select>
-        </form>
-        <div className='attempts'>
-          {attempts}
-        </div>
-        <button onClick={async () => await fetch('/api/dailies/delete', { method: 'DELETE' })}>delete all db entries</button>
-      </>
-    )
-  } else if (correct) {
-    return (
-      <>
-        <p>yay u won</p>
-      </>
-    )
-  } else if (!correct && attempts.length >= 8) {
-    return (
-      <>
-        <p>dang u lost</p>
-      </>
-    )
+  if (correct) {
+    localStorage.setItem('streak', Number(localStorage.getItem('streak')) + 1);
+    localStorage.setItem(attempts.length, Number(localStorage.getItem(attempts.length)) + 1);
   }
+  if (!correct && attempts.length >= 8) {
+    localStorage.setItem('X', Number(localStorage.getItem('X')) + 1);
+  }
+  return (
+    <>
+      {correct && <p>congrats u won</p>}
+      {(!correct && attempts.length >= 8) && <p>shoot u lost</p>}
+      <form className='guessInput'>
+        <label htmlFor='filter'>filter to an album:</label>
+        <select onChange={(e) => setFilter(e.target.value)}
+          disabled={(correct || attempts.length >= 8)}>
+          <option key={-1} value={-1}></option>
+          {arianaJSON.map((album) => <option key={album.releaseOrder} value={album.releaseOrder}>{album.title}</option>)}
+        </select>
+        <label htmlFor='guess'>guess a song:</label>
+        <select onChange={guessSong} placeholder={`guess ${attempts.length}/8 - type any ari song...`} disabled={(correct || attempts.length >= 8)}>
+          <option key={-1} value={-1}></option>
+          {selectArray}
+        </select>
+      </form>
+      <div className='attempts'>
+        {attempts}
+      </div>
+      <button onClick={async () => await fetch('/api/dailies/delete', { method: 'DELETE' })}>delete all db entries</button>
+    </>
+  )
 }
 
 function getTrackInfo(key, disc) {
@@ -168,7 +177,9 @@ function getTrackInfo(key, disc) {
   let album = disc[albumInd - 1];
   let trackInd = Number(key[1]);
   let track = album.tracks[trackInd - 1];
-  return { trackKey: albumInd + '#' + trackInd, albumNum: albumInd - 1, trackNum: trackInd - 1, img: album.cover, trackTitle: track.trackTitle, features: track.trackFeatures, trackLength: track.trackLength }
+  let cover = album.cover;
+  if (albumInd === 7 && trackInd >= 14) cover = album.altcover;
+  return { trackKey: albumInd + '#' + trackInd, albumNum: albumInd - 1, trackNum: trackInd - 1, img: cover, trackTitle: track.trackTitle, features: track.trackFeatures, trackLength: track.trackLength }
 }
 
 function calculateAnswer(disc) {
