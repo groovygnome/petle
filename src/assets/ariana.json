@@ -3,6 +3,7 @@
             "title":"Yours Truly",
             "releaseOrder":1,
             "cover":"./assets/yourstruly.png",
+            "year":2013,
             "tracks":[
                     {
                         "trackTitle":"Honeymoon Avenue",
@@ -82,6 +83,7 @@
             "title":"My Everything",
             "releaseOrder":2,
             "cover":"./assets/myeverything.png",
+            "year":2014,
             "tracks":[
                     {
                         "trackTitle":"Intro",
@@ -179,6 +181,7 @@
             "title":"Dangerous Woman",
             "releaseOrder":3,
             "cover":"./assets/dangerouswoman.png",
+            "year":2016,
             "tracks":[
                     {
                         "trackTitle":"Moonlight",
@@ -288,6 +291,7 @@
             "title":"Sweetener",
             "releaseOrder":4,
             "cover":"./assets/sweetener.png",
+            "year":2018,
             "tracks":[
                     {
                         "trackTitle":"raindrops (an angel cried)",
@@ -385,6 +389,7 @@
             "title":"Thank U, Next",
             "releaseOrder":5,
             "cover":"./assets/thankunext.png",
+            "year":2019,
             "tracks":[
                     {
                         "trackTitle":"imagine",
@@ -464,6 +469,7 @@
             "title":"Positions",
             "releaseOrder":6,
             "cover":"./assets/positions.png",
+            "year":2020,
             "tracks":[
                     {
                         "trackTitle":"shut up",
@@ -586,6 +592,7 @@
             "releaseOrder":7,
             "cover":"./assets/eternalsunshine.png",
             "altcover":"./assets/brighterdays.png",
+            "year":2024,
             "tracks":[
                     {
                         "trackTitle":"intro (end of the world)",
@@ -707,6 +714,7 @@
             "title":"Petal",
             "releaseOrder":8,
             "cover":"/assets/petal.png",
+            "year":2026,
             "tracks":[
                     {
                         "trackTitle":"kiss me",

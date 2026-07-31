@@ -9,8 +9,47 @@
 }
 
 .guessInput{
-  display:flex;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.autocomplete {
+  position:relative;
+  display: inline-block;
+}
+
+.autocomplete > input{
+  border: 1px solid transparent;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top : none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #181817;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover{
+  background-color: #292928;
+}
+
+.autocomplete-active{
+  background-color: #1c1b1a;
+  color: #181817;
 }
 
 body{
@@ -80,4 +119,43 @@ body{
   display:flex;
   align-items:center;
   flex-direction: column;
+}
+
+.dropbtn {
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #181817;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 99;
+}
+
+.dropdown-content div {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content div:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
 }
