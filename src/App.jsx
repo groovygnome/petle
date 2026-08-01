@@ -77,26 +77,6 @@ function App() {
     }
   }
 
-  function autoComplete(e) {
-    let val = e.target.value;
-    closeAllLists();
-    if (!val) return false;
-
-    let autoCompleteDivs = [];
-    for (let i = 0; i < selectArray.length; i++) {
-      if (selectArray[i][0].substring(0, val.length).toUpperCase() == val.toUpperCase() && selectArray[i][0] != 'guessed') {
-        autoCompleteDivs.push((
-          <div key={selectArray[i][1]} onClick={() => { e.target.value = ''; guessSong(selectArray[i][1]); closeAllLists(); }}>
-            <strong>{selectArray[i][0].substring(0, val.length)}</strong>
-            {selectArray[i][0].substring(val.length)}
-            <input type='hidden' value={selectArray[i][1]} />
-          </div>
-        ));
-      }
-    }
-    setacDivs(autoCompleteDivs);
-  }
-
   function closeAllLists() {
     setacDivs([]);
   }
