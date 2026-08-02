@@ -3,18 +3,30 @@
   src: url(./assets/stixtwotext.ttf);
 }
 
+#app{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width:100vw;
+  height:100vh;
+}
+
+#logo{
+  display:block;
+}
+
 *{
   margin: 0;
   padding:0;
 }
 
 .guessInput{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: inline-block;
+  text-align:center;
+  
 }
 
-.autocomplete {
+.autocomplete, .filter {
   position:relative;
   display: inline-block;
 }
@@ -25,9 +37,16 @@
   font-size: 16px;
 }
 
-.autocomplete-items {
-  position: absolute;
+.autocomplete-items, .filter-items, .filter{
   border: 1px solid #d4d4d4;
+}
+
+.filter{
+  display:block;
+}
+
+.autocomplete-items, .filter-items {
+  position: absolute;
   border-bottom: none;
   border-top : none;
   z-index: 99;
@@ -36,14 +55,15 @@
   right: 0;
 }
 
-.autocomplete-items div {
+
+.autocomplete-items div, .filter-items div, #filter-display {
   padding: 10px;
   cursor: pointer;
   background-color: #181817;
   border-bottom: 1px solid #d4d4d4;
 }
 
-.autocomplete-items div:hover{
+.autocomplete-items div:hover, .filter-items div:hover{
   background-color: #292928;
 }
 
@@ -59,16 +79,10 @@ body{
   font-family: stixtwotext, sans-serif;
 }
 
-#root{
-  display:flex;
-  flex-direction: column;
-  align-items:center;
-}
-
 .attempts{
   text-align: center;
   width: 40vw;
-}
+} 
 
 .attempt{
   display:grid;
@@ -89,8 +103,7 @@ body{
 } 
 
 .correct{
-  background-color: #699273;
-  color: 
+  background-color: #699273; 
 }
 
 .incorrect{
@@ -121,41 +134,18 @@ body{
   flex-direction: column;
 }
 
-.dropbtn {
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+.filter-choice, #filter-display{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
 }
 
-.dropdown {
-  position: relative;
+.filter-choice > img, #filter-display > img{
+  height: 5rem;
+  width:5rem;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #181817;
-  min-width: 200px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 99;
-}
-
-.dropdown-content div {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content div:hover {
-  background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+#dropdown {
+  height:2.5rem !important;
+  width:2.5rem !important;
 }

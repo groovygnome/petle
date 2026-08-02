@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import arianaJSON from './assets/ariana.json'
-import Attempt from './Attempt.jsx';
-import AutoComplete from './AutoComplete.jsx';
+import Attempt from './Attempt.jsx'
+import AutoComplete from './AutoComplete.jsx'
+import Filter from './Filter.jsx'
+import logo from './assets/petlelogo.png'
 
 function App() {
   const [attempts, setAttempts] = useState([]);
   const [filter, setFilter] = useState(-1);
+  const [filterShow, setFilterShow] = useState(false);
   const [answer, setAnswer] = useState({});
   const [correct, setCorrect] = useState(false);
   const [acDivs, setacDivs] = useState([]);
@@ -79,6 +82,7 @@ function App() {
 
   function closeAllLists() {
     setacDivs([]);
+    setFilterShow(false);
   }
 
 
@@ -91,34 +95,16 @@ function App() {
   }
 
   return (
-    <div onClick={closeAllLists}>
+    <div id='app' onClick={closeAllLists}>
+      <img id='logo' src={logo} />
       {correct && <p>congrats u won</p>}
       {(!correct && attempts.length >= 8) && <p>shoot u lost</p>}
-      <form autoComplete='off' className='guessInput'>
-        <div className='dropdown'>
-          <button className='dropbtn'>filter to one album</button>
-          <div className='dropdown-content'>
-            <div className='dropdown-choice' key={-1} value={-1}><img src='' /><p>all albums</p><p></p></div>
-            {arianaJSON.map((album) => (
-              <div className='dropdown-choice' key={album.releaseOrder} value={album.releaseOrder}>
-                <img src={album.cover} />
-                <p>{album.title}</p>
-                <p>{album.year}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div>
-          <label htmlFor='filter'>filter to an album:</label>
-          <select onChange={(e) => setFilter(e.target.value)}
-            disabled={(correct || attempts.length >= 8)}>
-            <option key={-1} value={-1}></option>
-            {arianaJSON.map((album) => <option key={album.releaseOrder} value={album.releaseOrder}>{album.title}</option>)}
-          </select>
-        </div>
+      <div className='guessInput'>
+        <Filter arr={arianaJSON} setFilter={setFilter} closeAllLists={closeAllLists} disabled={(correct || attempts.length >= 8)}
+          show={filterShow} setShow={setFilterShow} />
         <AutoComplete arr={selectArray} acDivs={acDivs} setacDivs={setacDivs} closeAllLists={closeAllLists} guessSong={guessSong}
-          attLength={attempts.length} correct={correct} />
-      </form>
+          attLength={attempts.length} disabled={(correct || attempts.length >= 8)} />
+      </div>
       <div className='attempts'>
         {attempts}
       </div>
