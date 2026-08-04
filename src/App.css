@@ -44,7 +44,7 @@
 .filter{
   display:block;
 }
-
+    
 .autocomplete-items, .filter-items {
   position: absolute;
   border-bottom: none;
@@ -80,9 +80,30 @@ body{
 }
 
 .attempts{
+  padding-top:2rem;
   text-align: center;
   width: 40vw;
-} 
+}
+
+#hints{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.hint{
+  text-align:center;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  width: 6.5vw;
+  height: 6.5vw;
+}
+
+.hint > img{
+  width:  7rem;
+  height: 7rem;
+}
 
 .attempt{
   display:grid;
@@ -91,7 +112,7 @@ body{
   padding-bottom: 2rem;
 }
 
-.attempt > *{
+.attempt > *, .hint{
   border-radius: 1rem;
 }
 
@@ -102,15 +123,15 @@ body{
   flex-direction: column;
 } 
 
-.correct{
+.correct, .available{
   background-color: #699273; 
 }
 
-.incorrect{
+.incorrect, .unavailable{
   background-color: #4e4e4e;
 }
 
-.almost{
+.almost, .used{
   background-color: #e7ca85;
   color: black; 
 }

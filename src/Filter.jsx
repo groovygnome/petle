@@ -12,8 +12,8 @@ function Filter({ arr, setFilter, closeAllLists, disabled, show, setShow }) {
     className='filter-choice allalbums' key={-1} value={-1}><img src={music} /><p>all albums</p><p></p></div >)
   arr.forEach((album) => (
     albumDivs.push(
-      <div onClick={() => { setFilter(album.releaseOrder); setFilterDisplay({ img: album.cover, title: album.title }) }} className='filter-choice' key={album.releaseOrder} value={album.releaseOrder}>
-        <img src={album.cover} />
+      <div onClick={() => { setFilter(album.releaseOrder); setFilterDisplay({ img: album.covers[0], title: album.title }) }} className='filter-choice' key={album.releaseOrder} value={album.releaseOrder}>
+        <img src={album.covers[0]} />
         <p>{album.title}</p>
         <p>{album.year}</p>
       </div>

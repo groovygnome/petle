@@ -2,7 +2,12 @@
         {
             "title":"Yours Truly",
             "releaseOrder":1,
-            "cover":"./assets/yourstruly.png",
+            "covers":[
+                "./assets/yourstruly/yourstruly0.png",
+                "./assets/yourstruly/yourstruly1.png",
+                "./assets/yourstruly/yourstruly2.png",
+                "./assets/yourstruly/yourstruly3.png"
+            ],
             "year":2013,
             "tracks":[
                     {
@@ -82,7 +87,13 @@
         { 
             "title":"My Everything",
             "releaseOrder":2,
-            "cover":"./assets/myeverything.png",
+            "covers":[
+                "./assets/myeverything/myeverything0.png",
+                "./assets/myeverything/myeverything1.png",
+                "./assets/myeverything/myeverything2.png",
+                "./assets/myeverything/myeverything3.png",
+                "./assets/myeverything/myeverything4.png"
+            ],
             "year":2014,
             "tracks":[
                     {
@@ -180,7 +191,14 @@
         { 
             "title":"Dangerous Woman",
             "releaseOrder":3,
-            "cover":"./assets/dangerouswoman.png",
+            "covers":[
+                "./assets/dangerouswoman/dangerouswoman0.png",
+                "./assets/dangerouswoman/dangerouswoman1.png",
+                "./assets/dangerouswoman/dangerouswoman2.png",
+                "./assets/dangerouswoman/dangerouswoman3.png",
+                "./assets/dangerouswoman/dangerouswoman4.png",
+                "./assets/dangerouswoman/dangerouswoman5.png"
+            ],
             "year":2016,
             "tracks":[
                     {
@@ -290,7 +308,9 @@
         { 
             "title":"Sweetener",
             "releaseOrder":4,
-            "cover":"./assets/sweetener.png",
+            "covers":[
+                "./assets/sweetener/sweetener0.png"
+            ],
             "year":2018,
             "tracks":[
                     {
@@ -388,7 +408,12 @@
         { 
             "title":"Thank U, Next",
             "releaseOrder":5,
-            "cover":"./assets/thankunext.png",
+            "covers":[
+                "./assets/thankunext/thankunext0.png",
+                "./assets/thankunext/thankunext1.png",
+                "./assets/thankunext/thankunext2.png",
+                "./assets/thankunext/thankunext3.png"
+            ],
             "year":2019,
             "tracks":[
                     {
@@ -468,7 +493,12 @@
         { 
             "title":"Positions",
             "releaseOrder":6,
-            "cover":"./assets/positions.png",
+            "covers":[
+                "./assets/positions/positions0.png",
+                "./assets/positions/positions1.png",
+                "./assets/positions/positions2.png",
+                "./assets/positions/positions3.png"
+            ],
             "year":2020,
             "tracks":[
                     {
@@ -590,8 +620,20 @@
         { 
             "title":"Eternal Sunshine",
             "releaseOrder":7,
-            "cover":"./assets/eternalsunshine.png",
-            "altcover":"./assets/brighterdays.png",
+            "covers":[
+                "./assets/eternalsunshine/eternalsunshine0.png",
+                "./assets/eternalsunshine/eternalsunshine1.png",
+                "./assets/eternalsunshine/eternalsunshine2.png",
+                "./assets/eternalsunshine/eternalsunshine3.png",
+                "./assets/eternalsunshine/eternalsunshine4.png",
+                "./assets/eternalsunshine/eternalsunshine5.png",
+                "./assets/eternalsunshine/eternalsunshine6.png",
+                "./assets/eternalsunshine/brighterdays0.png",
+                "./assets/eternalsunshine/brighterdays1.png",
+                "./assets/eternalsunshine/brighterdays2.png",
+                "./assets/eternalsunshine/brighterdays3.png",
+                "./assets/eternalsunshine/brighterdays4.png"
+            ],
             "year":2024,
             "tracks":[
                     {
@@ -713,7 +755,14 @@
         { 
             "title":"Petal",
             "releaseOrder":8,
-            "cover":"/assets/petal.png",
+            "covers":[
+                "/assets/petal/petal0.png",
+                "/assets/petal/petal1.png",
+                "/assets/petal/petal2.png",
+                "/assets/petal/petal3.png",
+                "/assets/petal/petal4.png",
+                "/assets/petal/petal5.png"
+            ],
             "year":2026,
             "tracks":[
                     {

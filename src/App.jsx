@@ -10,6 +10,7 @@ function App() {
   const [attempts, setAttempts] = useState([]);
   const [filter, setFilter] = useState(-1);
   const [filterShow, setFilterShow] = useState(false);
+  const [showHint, setShowHint] = useState(false);
   const [answer, setAnswer] = useState({});
   const [correct, setCorrect] = useState(false);
   const [acDivs, setacDivs] = useState([]);
@@ -108,6 +109,22 @@ function App() {
       <div className='attempts'>
         {attempts}
       </div>
+      <div id='hints'>
+        <div id='coverHint' className={'hint ' + (3 - attempts.length > 0 ? 'unavailable' : showHint ? 'used' : 'available')}>
+          {3 - attempts.length > 0 ?
+            <p>cover art hint in {3 - attempts.length} guess{3 - attempts.length > 1 && 'es'}</p>
+            : showHint ?
+              <img src={answer.img} />
+              : <p onClick={() => setShowHint(true)}>hint available!</p>}
+        </div>
+        <div id='heardleHint' className={'hint ' + (5 - attempts.length > 0 ? 'unavailable' : showHint ? 'used' : 'available')}>
+          {5 - attempts.length > 0 ?
+            <p>audio hint in {5 - attempts.length} guess{5 - attempts.length > 1 && 'es'}</p>
+            : showHint ?
+              <img src={answer.img} />
+              : <p onClick={() => setShowHint(true)}>hint available!</p>}
+        </div>
+      </div>
       <button onClick={async () => await fetch('/api/dailies/delete', { method: 'DELETE' })}>delete all db entries</button>
     </div>
   )
@@ -119,8 +136,8 @@ function getTrackInfo(key, disc) {
   let album = disc[albumInd - 1];
   let trackInd = Number(key[1]);
   let track = album.tracks[trackInd - 1];
-  let cover = album.cover;
-  if (albumInd === 7 && trackInd >= 14) cover = album.altcover;
+  let cover = album.covers[0];
+  if (albumInd === 7 && trackInd >= 14) cover = album.covers[7];
   return { trackKey: albumInd + '#' + trackInd, albumNum: albumInd - 1, trackNum: trackInd - 1, img: cover, trackTitle: track.trackTitle, features: track.trackFeatures, trackLength: track.trackLength }
 }
 
