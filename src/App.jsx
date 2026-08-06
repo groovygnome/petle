@@ -10,7 +10,9 @@ function App() {
   const [attempts, setAttempts] = useState([]);
   const [filter, setFilter] = useState(-1);
   const [filterShow, setFilterShow] = useState(false);
-  const [showHint, setShowHint] = useState(false);
+  const [showcHint, setShowcHint] = useState(false);
+  const [showaHint, setShowaHint] = useState(false);
+  const [deezer, setDeezer] = useState({});
   const [answer, setAnswer] = useState({});
   const [correct, setCorrect] = useState(false);
   const [acDivs, setacDivs] = useState([]);
@@ -45,10 +47,22 @@ function App() {
         todayAnswer = await res.json();
       }
       setAnswer(getTrackInfo(todayAnswer[0].answer, arianaJSON));
+
+      const result = await fetch('/api/track/3135556');
+      const data = await result.json();
+
+      console.log(result.status);
+      console.log('content-type', result.headers.get('content-type'));
+      console.log('data', data);
+      setDeezer(data.preview);
     }
 
     getPetle();
   }, []);
+
+  useEffect(() => {
+    console.log(deezer);
+  }, [deezer]);
 
   let arianArray = arianaJSON;
   attempts.forEach((attempt) => {
@@ -110,19 +124,21 @@ function App() {
         {attempts}
       </div>
       <div id='hints'>
-        <div id='coverHint' className={'hint ' + (3 - attempts.length > 0 ? 'unavailable' : showHint ? 'used' : 'available')}>
+        <div id='coverHint' className={'hint ' + (3 - attempts.length > 0 ? 'unavailable' : showcHint ? 'used' : 'available')}>
           {3 - attempts.length > 0 ?
             <p>cover art hint in {3 - attempts.length} guess{3 - attempts.length > 1 && 'es'}</p>
-            : showHint ?
+            : showcHint ?
               <img src={answer.img} />
-              : <p onClick={() => setShowHint(true)}>hint available!</p>}
+              : <p onClick={() => setShowcHint(true)}>hint available!</p>}
         </div>
-        <div id='heardleHint' className={'hint ' + (5 - attempts.length > 0 ? 'unavailable' : showHint ? 'used' : 'available')}>
+        <div id='heardleHint' className={'hint ' + (5 - attempts.length > 0 ? 'unavailable' : showaHint ? 'used' : 'available')}>
           {5 - attempts.length > 0 ?
             <p>audio hint in {5 - attempts.length} guess{5 - attempts.length > 1 && 'es'}</p>
-            : showHint ?
-              <img src={answer.img} />
-              : <p onClick={() => setShowHint(true)}>hint available!</p>}
+            : showaHint ?
+              (<audio id='deezer' controls>
+                <source src={deezer} type='audio/mpeg' />
+              </audio>)
+              : <p onClick={() => setShowaHint(true)}>hint available!</p>}
         </div>
       </div>
       <button onClick={async () => await fetch('/api/dailies/delete', { method: 'DELETE' })}>delete all db entries</button>

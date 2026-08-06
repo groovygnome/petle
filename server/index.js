@@ -10,6 +10,12 @@ app.get('/api/dailies/:date', async (req, res) => {
   res.json(result);
 });
 
+app.get('/api/track/:trackId', async (req, res) => {
+  const result = await fetch(`https://api.deezer.com/track/${req.params.trackId}`);
+  const data = await result.json();
+  res.json(data);
+});
+
 app.delete('/api/dailies/delete', async (req, res) => {
   await db.deleteDailies();
   res.json({ ok: true });
