@@ -14,73 +14,85 @@
                         "trackTitle":"Honeymoon Avenue",
                         "trackOrder":1,
                         "trackFeatures":["None"],
-                        "trackLength": 339
+                        "trackLength": 339,
+                        "deezerId": "69959806"
                     },
                     {
                         "trackTitle":"Baby I",
                         "trackOrder":2,
                         "trackFeatures":["None"],
-                        "trackLength": 197
+                        "trackLength": 197,
+                        "deezerId": "69959807"
                     },
                     {
                         "trackTitle":"Right There",
                         "trackOrder":3,
                         "trackFeatures":["Big Sean"],
-                        "trackLength": 247
+                        "trackLength": 247,
+                        "deezerId": "69959808"
                     },
                     {
                         "trackTitle":"Tattooed Heart",
                         "trackOrder":4,
                         "trackFeatures":["None"],
-                        "trackLength": 194
+                        "trackLength": 194,
+                        "deezerId": "69959809"
                     },
                     {
                         "trackTitle":"Lovin' It",
                         "trackOrder":5,
                         "trackFeatures":["None"],
-                        "trackLength": 180
+                        "trackLength": 180,
+                        "deezerId": "69959810"
                     },
                     {
                         "trackTitle":"Piano",
                         "trackOrder":6,
                         "trackFeatures":["None"],
-                        "trackLength": 234
+                        "trackLength": 234,
+                        "deezerId": "69959811"
                     },
                     {
                         "trackTitle":"Daydreamin'",
                         "trackOrder":7,
                         "trackFeatures":["None"],
-                        "trackLength": 211
+                        "trackLength": 211,
+                        "deezerId": "69959812"
                     },
                     {
                         "trackTitle":"The Way",
                         "trackOrder":8,
                         "trackFeatures":["Mac Miller"],
-                        "trackLength": 227
+                        "trackLength": 227,
+                        "deezerId": "69959813"
                     },
                     {
                         "trackTitle":"You'll Never Know",
                         "trackOrder":9,
                         "trackFeatures":["None"],
-                        "trackLength": 214
+                        "trackLength": 214,
+                        "deezerId": "69959814"
                     },
                     {
                         "trackTitle":"Almost Is Never Enough",
                         "trackOrder":10,
                         "trackFeatures":["Nathan Sykes"],
-                        "trackLength": 327
+                        "trackLength": 327,
+                        "deezerId": "69959815"
                     },
                     {
                         "trackTitle":"Popular Song",
                         "trackOrder":11,
                         "trackFeatures":["MIKA"],
-                        "trackLength": 200
+                        "trackLength": 200,
+                        "deezerId": "69959816"
                     },
                     {
                         "trackTitle":"Better Left Unsaid",
                         "trackOrder":12,
                         "trackFeatures":["None"],
-                        "trackLength": 211
+                        "trackLength": 211,
+                        "deezerId": "69959817"
                     }
                 ]
         },
@@ -100,91 +112,106 @@
                         "trackTitle":"Intro",
                         "trackOrder":1,
                         "trackFeatures":["None"],
-                        "trackLength": 79
+                        "trackLength": 79,
+                        "deezerId": "83837256"
                     },
                     {
                         "trackTitle":"Problem",
                         "trackOrder":2,
                         "trackFeatures":["Iggy Azalea"],
-                        "trackLength":193
+                        "trackLength":193,
+                        "deezerId": "83837258"
                     },
                     {
                         "trackTitle":"One Last Time",
                         "trackOrder":3,
                         "trackFeatures":["None"],
-                        "trackLength":197
+                        "trackLength":197,
+                        "deezerId": "83837260"
                     },
                     {
                         "trackTitle":"Why Try",
                         "trackOrder":4,
                         "trackFeatures":["None"],
-                        "trackLength": 211
+                        "trackLength": 211,
+                        "deezerId": "83837262"
                     },
                     {
                         "trackTitle":"Break Free",
                         "trackOrder":5,
                         "trackFeatures":["Zedd"],
-                        "trackLength": 214
+                        "trackLength": 214,
+                        "deezerId": "83837264"
                     },
                     {
                         "trackTitle":"Best Mistake",
                         "trackOrder":6,
                         "trackFeatures":["Big Sean"],
-                        "trackLength": 233
+                        "trackLength": 233,
+                        "deezerId": "83837266"
                     },
                     {
                         "trackTitle":"Be My Baby",
                         "trackOrder":7,
                         "trackFeatures":["Cashmere Cat"],
-                        "trackLength": 217
+                        "trackLength": 217,
+                        "deezerId": "83837268"
                     },
                     {
                         "trackTitle":"Bring Your Heart Right Back",
                         "trackOrder":8,
                         "trackFeatures":["Childish Gambino"],
-                        "trackLength": 253
+                        "trackLength": 253,
+                        "deezerId": "83837270"
                     },
                     {
                         "trackTitle":"Love Me Harder",
                         "trackOrder":9,
                         "trackFeatures":["The Weeknd"],
-                        "trackLength": 236
+                        "trackLength": 236,
+                        "deezerId": "83837272"
                     },
                     {
                         "trackTitle":"Just A Little Bit Of Your Heart",
                         "trackOrder":10,
                         "trackFeatures":["None"],
-                        "trackLength":  232
+                        "trackLength":  232,
+                        "deezerId": "83837274"
                     },
                     {
                         "trackTitle":"Hands On Me",
                         "trackOrder":11,
                         "trackFeatures":["A$AP Ferg"],
-                        "trackLength": 192
+                        "trackLength": 192,
+                        "deezerId": "83837276" 
                     },
                     {
                         "trackTitle":"My Everything",
                         "trackOrder":12,
                         "trackFeatures":["None"],
-                        "trackLength": 168
+                        "trackLength": 168,
+                        "deezerId": "83837278"
                     },
                     {
                         "trackTitle":"Bang Bang",
                         "trackOrder":13,
                         "trackFeatures":["Nicki Minaj", "Jessie J"],
-                        "trackLength": 199
+                        "trackLength": 199,
+                        "deezerId": "83837280"
                     },
                     {
                         "trackTitle":"Only 1",
                         "trackOrder":14,
                         "trackFeatures":["None"],
-                        "trackLength": 193
+                        "trackLength": 193,
+                        "deezerId": "83837282"
                     },
                     {
                         "trackTitle":"You Don't Know Me",
                         "trackOrder":15,
                         "trackFeatures":["None"],
-                        "trackLength": 233
+                        "trackLength": 233,
+                        "deezerId": "83837284"
                     }
                 ]
         },
@@ -205,19 +232,22 @@
                         "trackTitle":"Moonlight",
                         "trackOrder":1,
                         "trackFeatures":["None"],
-                        "trackLength": 202
+                        "trackLength": 202,
+                        "deezerId": "1375215212"
                     },
                     {
                         "trackTitle":"Dangerous Woman",
                         "trackOrder":2,
                         "trackFeatures":["None"],
-                        "trackLength": 235
+                        "trackLength": 235,
+                        "deezerId": "1375215222" 
                     },
                     {
                         "trackTitle":"Be Alright",
                         "trackOrder":3,
                         "trackFeatures":["None"],
-                        "trackLength": 179
+                        "trackLength": 179,
+                        "deezerId": "1375215232"
                     },
                     {
                         "trackTitle":"Into You",
