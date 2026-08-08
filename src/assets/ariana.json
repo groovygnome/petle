@@ -247,91 +247,105 @@
                         "trackOrder":3,
                         "trackFeatures":["None"],
                         "trackLength": 179,
-                        "deezerId": "1375215232"
+                        "deezerId": "1375215232" 
                     },
                     {
                         "trackTitle":"Into You",
                         "trackOrder":4,
                         "trackFeatures":["None"],
-                        "trackLength": 244
+                        "trackLength": 244,
+                        "deezerId": "1375215242"
                     },
                     {
                         "trackTitle":"Side To Side",
                         "trackOrder":5,
                         "trackFeatures":["Nicki Minaj"],
-                        "trackLength": 226
+                        "trackLength": 226,
+                        "deezerId": "1375215252"
                     },
                     {
                         "trackTitle":"Let Me Love You",
                         "trackOrder":6,
                         "trackFeatures":["Lil Wayne"],
-                        "trackLength": 223
+                        "trackLength": 223,
+                        "deezerId": "1375215262"
                     },
                     {
                         "trackTitle":"Greedy",
                         "trackOrder":7,
                         "trackFeatures":["None"],
-                        "trackLength": 214
+                        "trackLength": 214,
+                        "deezerId": "1375215272"
                     },
                     {
                         "trackTitle":"Leave Me Lonely",
                         "trackOrder":8,
                         "trackFeatures":["Macy Gray"],
-                        "trackLength": 229
+                        "trackLength": 229,
+                        "deezerId": "1375215282"
                     },
                     {
                         "trackTitle":"Everyday",
                         "trackOrder":9,
                         "trackFeatures":["Future"],
-                        "trackLength": 194
+                        "trackLength": 194,
+                        "deezerId": "1375215292"
                     },
                     {
                         "trackTitle":"Sometimes",
                         "trackOrder":10,
                         "trackFeatures":["None"],
-                        "trackLength": 226
+                        "trackLength": 226,
+                        "deezerId": "1375215302"
                     },
                     {
                         "trackTitle":"I Don't Care",
                         "trackOrder":11,
                         "trackFeatures":["None"],
-                        "trackLength": 178
+                        "trackLength": 178,
+                        "deezerId": "1375215312"
                     },
                     {
                         "trackTitle":"Bad Decisions",
                         "trackOrder":12,
                         "trackFeatures":["None"],
-                        "trackLength": 226
+                        "trackLength": 226,
+                        "deezerId": "1375215322"
                     },
                     {
                         "trackTitle":"Touch It",
                         "trackOrder":13,
                         "trackFeatures":["None"],
-                        "trackLength": 260
+                        "trackLength": 260,
+                        "deezerId": "1375215332"
                     },
                     {
                         "trackTitle":"Knew Better / Forever Boy",
                         "trackOrder":14,
                         "trackFeatures":["None"],
-                        "trackLength": 299
+                        "trackLength": 299,
+                        "deezerId": "1375215342"
                     },
                     {
                         "trackTitle":"Thinkin' Bout You",
                         "trackOrder":15,
                         "trackFeatures":["None"],
-                        "trackLength": 200
+                        "trackLength": 200,
+                        "deezerId": "1375215352"
                     },
                     {
                         "trackTitle":"Step On Up",
                         "trackOrder":16,
                         "trackFeatures":["None"],
-                        "trackLength": 180
+                        "trackLength": 180,
+                        "deezerId": "1375215362"
                     },
                     {
                         "trackTitle":"Jason's Song (Gave It Away)",
                         "trackOrder":17,
                         "trackFeatures":["None"],
-                        "trackLength": 264
+                        "trackLength": 264,
+                        "deezerId": "1375215372" 
                     }
                 ]
         },
@@ -347,96 +361,111 @@
                         "trackTitle":"raindrops (an angel cried)",
                         "trackOrder":1,
                         "trackFeatures":["None"],
-                        "trackLength": 37
+                        "trackLength": 37,
+                        "deezerId": "542373582" 
                     },
                     {
                         "trackTitle":"blazed",
                         "trackOrder":2,
                         "trackFeatures":["Pharrell Williams"],
-                        "trackLength": 196
+                        "trackLength": 196,
+                        "deezerId": "542373592"
                     },
                     {
                         "trackTitle":"the light is coming",
                         "trackOrder":3,
                         "trackFeatures":["Nicki Minaj"],
-                        "trackLength": 228
+                        "trackLength": 228,
+                        "deezerId": "542373602"
                     },
                     {
                         "trackTitle":"R.E.M",
                         "trackOrder":4,
                         "trackFeatures":["None"],
-                        "trackLength": 245
+                        "trackLength": 245,
+                        "deezerId": "542373612"
                     },
                     {
                         "trackTitle":"God is a woman",
                         "trackOrder":5,
                         "trackFeatures":["None"],
-                        "trackLength": 197
+                        "trackLength": 197,
+                        "deezerId": "542373622"
                     },
                     {
                         "trackTitle":"sweetener",
                         "trackOrder":6,
                         "trackFeatures":["None"],
-                        "trackLength": 208
+                        "trackLength": 208,
+                        "deezerId": "542373632"
                     },
                     {
                         "trackTitle":"successful",
                         "trackOrder":7,
                         "trackFeatures":["None"],
-                        "trackLength": 227
+                        "trackLength": 227,
+                        "deezerId": "542373642"
                     },
                     {
                         "trackTitle":"everytime",
                         "trackOrder":8,
                         "trackFeatures":["None"],
-                        "trackLength": 172
+                        "trackLength": 172,
+                        "deezerId": "542373652"
                     },
                     {
                         "trackTitle":"breathin",
                         "trackOrder":9,
                         "trackFeatures":["None"],
-                        "trackLength": 198
+                        "trackLength": 198,
+                        "deezerId": "542373662"
                     },
                     {
                         "trackTitle":"no tears left to cry",
                         "trackOrder":10,
                         "trackFeatures":["None"],
-                        "trackLength": 205
+                        "trackLength": 205,
+                        "deezerId": "542373672"
                     },
                     {
                         "trackTitle":"borderline",
                         "trackOrder":11,
                         "trackFeatures":["Missy Elliott"],
-                        "trackLength": 177
+                        "trackLength": 177,
+                        "deezerId": "542373682"
                     },
                     {
                         "trackTitle":"better off",
                         "trackOrder":12,
                         "trackFeatures":["None"],
-                        "trackLength": 171
+                        "trackLength": 171,
+                        "deezerId": "542373692"
                     },
                     {
                         "trackTitle":"goodnight n go",
                         "trackOrder":13,
                         "trackFeatures":["None"],
-                        "trackLength": 189
+                        "trackLength": 189,
+                        "deezerId": "542373702"
                     },
                     {
                         "trackTitle":"pete davidson",
                         "trackOrder":14,
                         "trackFeatures":["None"],
-                        "trackLength": 73
+                        "trackLength": 73,
+                        "deezerId": "542373712"
                     },
                     {
                         "trackTitle":"get well soon",
                         "trackOrder":15,
                         "trackFeatures":["None"],
-                        "trackLength": 322
+                        "trackLength": 322,
+                        "deezerId": "542373722"
                     }
             ]
         },
         { 
-            "title":"Thank U, Next",
+            "title":"thank u, next",
             "releaseOrder":5,
             "covers":[
                 "./assets/thankunext/thankunext0.png",
@@ -450,73 +479,85 @@
                         "trackTitle":"imagine",
                         "trackOrder":1,
                         "trackFeatures":["None"],
-                        "trackLength": 212
+                        "trackLength": 212,
+                        "deezerId": "629895062" 
                     },
                     {
                         "trackTitle":"needy",
                         "trackOrder":2,
                         "trackFeatures":["None"],
-                        "trackLength": 171
+                        "trackLength": 171,
+                        "deezerId": "629895072"
                     },
                     {
                         "trackTitle":"NASA",
                         "trackOrder":3,
                         "trackFeatures":["None"],
-                        "trackLength": 182
+                        "trackLength": 182,
+                        "deezerId": "629895082"
                     },
                     {
                         "trackTitle":"bloodline",
                         "trackOrder":4,
                         "trackFeatures":["None"],
-                        "trackLength": 216
+                        "trackLength": 216,
+                        "deezerId": "629895092"
                     },
                     {
                         "trackTitle":"fake smile",
                         "trackOrder":5,
                         "trackFeatures":["None"],
-                        "trackLength": 208
+                        "trackLength": 208,
+                        "deezerId": "629895102"
                     },
                     {
                         "trackTitle":"bad idea",
                         "trackOrder":6,
                         "trackFeatures":["None"],
-                        "trackLength": 267
+                        "trackLength": 267,
+                        "deezerId": "629895112"
                     },
                     {
                         "trackTitle":"make up",
                         "trackOrder":7,
                         "trackFeatures":["None"],
-                        "trackLength": 140
+                        "trackLength": 140,
+                        "deezerId": "629895122"
                     },
                     {
                         "trackTitle":"ghostin",
                         "trackOrder":8,
                         "trackFeatures":["None"],
-                        "trackLength": 271
+                        "trackLength": 271,
+                        "deezerId": "629895132"
                     },
                     {
                         "trackTitle":"in my head",
                         "trackOrder":9,
                         "trackFeatures":["None"],
-                        "trackLength": 222
+                        "trackLength": 222,
+                        "deezerId": "629895142"
                     },
                     {
                         "trackTitle":"7 rings",
                         "trackOrder":10,
                         "trackFeatures":["None"],
-                        "trackLength": 178
+                        "trackLength": 178,
+                        "deezerId": "629895152"
                     },
                     {
                         "trackTitle":"thank u, next",
                         "trackOrder":11,
                         "trackFeatures":["None"],
-                        "trackLength": 207
+                        "trackLength": 207,
+                        "deezerId": "629895162"
                     },
                     {
                         "trackTitle":"break up with your girlfriend, i'm bored",
                         "trackOrder":12,
                         "trackFeatures":["None"],
-                        "trackLength": 190
+                        "trackLength": 190,
+                        "deezerId": "629895172"
                     }
             ]
         },
@@ -535,120 +576,139 @@
                         "trackTitle":"shut up",
                         "trackOrder":1,
                         "trackFeatures":["None"],
-                        "trackLength": 157
+                        "trackLength": 157,
+                        "deezerId": "1249621112" 
                     },
                     {
                         "trackTitle":"34+35",
                         "trackOrder":2,
                         "trackFeatures":["None"],
-                        "trackLength":173
+                        "trackLength":173,
+                        "deezerId": "1249621122"
                     },
                     {
                         "trackTitle":"motive",
                         "trackOrder":3,
                         "trackFeatures":["Doja Cat"],
-                        "trackLength":167
+                        "trackLength":167,
+                        "deezerId": "1249621132"
                     },
                     {
                         "trackTitle":"just like magic",
                         "trackOrder":4,
                         "trackFeatures":["None"],
-                        "trackLength": 149
+                        "trackLength": 149,
+                        "deezerId": "1249621142"
                     },
                     {
                         "trackTitle":"off the table",
                         "trackOrder":5,
                         "trackFeatures":["The Weeknd"],
-                        "trackLength": 239
+                        "trackLength": 239,
+                        "deezerId": "1249621152"
                     },
                     {
                         "trackTitle":"six thirty",
                         "trackOrder":6,
                         "trackFeatures":["None"],
-                        "trackLength": 183
+                        "trackLength": 183,
+                        "deezerId": "1249621162"
                     },
                     {
                         "trackTitle":"safety net",
                         "trackOrder":7,
                         "trackFeatures":["Ty Dolla $ign"],
-                        "trackLength": 208
+                        "trackLength": 208,
+                        "deezerId": "1249621172"
                     },
                     {
                         "trackTitle":"my hair",
                         "trackOrder":8,
                         "trackFeatures":["None"],
-                        "trackLength": 158
+                        "trackLength": 158,
+                        "deezerId": "1249621182"
                     },
                     {
                         "trackTitle":"nasty",
                         "trackOrder":9,
                         "trackFeatures":["None"],
-                        "trackLength": 200
+                        "trackLength": 200,
+                        "deezerId": "1249621192"
                     },
                     {
                         "trackTitle":"west side",
                         "trackOrder":10,
                         "trackFeatures":["None"],
-                        "trackLength":  132
+                        "trackLength":  132,
+                        "deezerId": "1249621202"
                     },
                     {
                         "trackTitle":"love language",
                         "trackOrder":11,
                         "trackFeatures":["None"],
-                        "trackLength": 179
+                        "trackLength": 179,
+                        "deezerId": "1249621212"
                     },
                     {
                         "trackTitle":"positions",
                         "trackOrder":12,
                         "trackFeatures":["None"],
-                        "trackLength": 172
+                        "trackLength": 172,
+                        "deezerId": "1249621222"
                     },
                     {
                         "trackTitle":"obvious",
                         "trackOrder":13,
                         "trackFeatures":["None"],
-                        "trackLength": 146
+                        "trackLength": 146,
+                        "deezerId": "1249621232"
                     },
                     {
                         "trackTitle":"pov",
                         "trackOrder":14,
                         "trackFeatures":["None"],
-                        "trackLength": 201
+                        "trackLength": 201,
+                        "deezerId": "1249621242"
                     },
                     {
                         "trackTitle":"someone like u - interlude",
                         "trackOrder":15,
                         "trackFeatures":["None"],
-                        "trackLength": 76
+                        "trackLength": 76,
+                        "deezerId": "1249621252"
                     },
                     {
                         "trackTitle":"test drive",
                         "trackOrder":16,
                         "trackFeatures":["None"],
-                        "trackLength": 122
+                        "trackLength": 122,
+                        "deezerId": "1249621262"
                     },
                     {
                         "trackTitle":"34+35 Remix",
                         "trackOrder":17,
                         "trackFeatures":["Doja Cat", "Megan Thee Stallion"],
-                        "trackLength": 182
+                        "trackLength": 182,
+                        "deezerId": "1249621272"
                     },
                     {
                         "trackTitle":"worst behavior",
                         "trackOrder":18,
                         "trackFeatures":["None"],
-                        "trackLength": 124
+                        "trackLength": 124,
+                        "deezerId": "1249621282"
                     },
                     {
                         "trackTitle":"main thing",
                         "trackOrder":19,
                         "trackFeatures":["None"],
-                        "trackLength": 129
+                        "trackLength": 129,
+                        "deezerId": "1249621292"
                     }
                 ]
         },
         { 
-            "title":"Eternal Sunshine",
+            "title":"eternal sunshine",
             "releaseOrder":7,
             "covers":[
                 "./assets/eternalsunshine/eternalsunshine0.png",
@@ -670,115 +730,134 @@
                         "trackTitle":"intro (end of the world)",
                         "trackOrder":1,
                         "trackFeatures":["None"],
-                        "trackLength": 92
+                        "trackLength": 92,
+                        "deezerId": "3294514091"
                     },
                     {
                         "trackTitle":"bye",
                         "trackOrder":2,
                         "trackFeatures":["None"],
-                        "trackLength":164
+                        "trackLength":164,
+                        "deezerId": "3294514101" 
                     },
                     {
                         "trackTitle":"don't wanna break up again",
                         "trackOrder":3,
                         "trackFeatures":["None"],
-                        "trackLength":174
+                        "trackLength":174,
+                        "deezerId": "3294514111"
                     },
                     {
                         "trackTitle":"Saturn Returns Interlude",
                         "trackOrder":4,
                         "trackFeatures":["None"],
-                        "trackLength": 42
+                        "trackLength": 42,
+                        "deezerId": "3294514121"
                     },
                     {
                         "trackTitle":"eternal sunshine",
                         "trackOrder":5,
                         "trackFeatures":["None"],
-                        "trackLength": 210
+                        "trackLength": 210,
+                        "deezerId": "3294514131"
                     },
                     {
                         "trackTitle":"supernatural",
                         "trackOrder":6,
                         "trackFeatures":["None"],
-                        "trackLength": 163
+                        "trackLength": 163,
+                        "deezerId": "3294514141"
                     },
                     {
                         "trackTitle":"true story",
                         "trackOrder":7,
                         "trackFeatures":["None"],
-                        "trackLength": 163
+                        "trackLength": 163,
+                        "deezerId": "3294514151"
                     },
                     {
                         "trackTitle":"the boy is mine",
                         "trackOrder":8,
                         "trackFeatures":["None"],
-                        "trackLength": 173
+                        "trackLength": 173,
+                        "deezerId": "3294514161"
                     },
                     {
                         "trackTitle":"yes, and?",
                         "trackOrder":9,
                         "trackFeatures":["None"],
-                        "trackLength": 214
+                        "trackLength": 214,
+                        "deezerId": "3294514171"
                     },
                     {
                         "trackTitle":"we can't be friends (wait for your love)",
                         "trackOrder":10,
                         "trackFeatures":["None"],
-                        "trackLength":  228
+                        "trackLength":  228,
+                        "deezerId": "3294514181"
                     },
                     {
                         "trackTitle":"i wish i hated you",
                         "trackOrder":11,
                         "trackFeatures":["None"],
-                        "trackLength": 153
+                        "trackLength": 153,
+                        "deezerId": "3294514191"
                     },
                     {
                         "trackTitle":"imperfect for you",
                         "trackOrder":12,
                         "trackFeatures":["None"],
-                        "trackLength": 182
+                        "trackLength": 182,
+                        "deezerId": "3294514201"
                     },
                     {
                         "trackTitle":"ordinary things",
                         "trackOrder":13,
                         "trackFeatures":["Nonna"],
-                        "trackLength": 168
+                        "trackLength": 168,
+                        "deezerId": "3294514211"
                     },
                     {
                         "trackTitle":"intro (end of the world) - extended",
                         "trackOrder":14,
                         "trackFeatures":["None"],
-                        "trackLength": 161
+                        "trackLength": 161,
+                        "deezerId": "3294514221"
                     },
                     {
                         "trackTitle":"twilight zone",
                         "trackOrder":15,
                         "trackFeatures":["None"],
-                        "trackLength": 198
+                        "trackLength": 198,
+                        "deezerId": "3294514231"
                     },
                     {
                         "trackTitle":"warm",
                         "trackOrder":16,
                         "trackFeatures":["None"],
-                        "trackLength": 201
+                        "trackLength": 201,
+                        "deezerId": "3294514241"
                     },
                     {
                         "trackTitle":"dandelion",
                         "trackOrder":17,
                         "trackFeatures":["None"],
-                        "trackLength": 204
+                        "trackLength": 204,
+                        "deezerId": "3294514251"
                     },
                     {
                         "trackTitle":"past life",
                         "trackOrder":18,
                         "trackFeatures":["None"],
-                        "trackLength": 215
+                        "trackLength": 215,
+                        "deezerId": "3294514261"
                     },
                     {
                         "trackTitle":"Hampstead",
                         "trackOrder":19,
                         "trackFeatures":["None"],
-                        "trackLength": 216
+                        "trackLength": 216,
+                        "deezerId": "3294514271"
                     }
                 ]
         },
@@ -799,73 +878,85 @@
                         "trackTitle":"kiss me",
                         "trackOrder":1,
                         "trackFeatures":["None"],
-                        "trackLength": 219
+                        "trackLength": 219,
+                        "deezerId": "4182547582"
                     },
                     {
                         "trackTitle":"hate that i made you love me",
                         "trackOrder":2,
                         "trackFeatures":["None"],
-                        "trackLength":198
+                        "trackLength":198,
+                        "deezerId": "4182547592"
                     },
                     {
                         "trackTitle":"petal",
                         "trackOrder":3,
                         "trackFeatures":["None"],
-                        "trackLength":188
+                        "trackLength":188,
+                        "deezerId": "4182547602" 
                     },
                     {
                         "trackTitle":"stay",
                         "trackOrder":4,
                         "trackFeatures":["None"],
-                        "trackLength": 144
+                        "trackLength": 144,
+                        "deezerId": "4182547612"
                     },
                     {
                         "trackTitle":"oh well",
                         "trackOrder":5,
                         "trackFeatures":["None"],
-                        "trackLength": 196
+                        "trackLength": 196,
+                        "deezerId": "4182547622"
                     },
                     {
                         "trackTitle":"big feelings",
                         "trackOrder":6,
                         "trackFeatures":["None"],
-                        "trackLength": 173
+                        "trackLength": 173,
+                        "deezerId": "4182547632"
                     },
                     {
                         "trackTitle":"freak",
                         "trackOrder":7,
                         "trackFeatures":["None"],
-                        "trackLength": 199
+                        "trackLength": 199,
+                        "deezerId": "4182547642"
                     },
                     {
                         "trackTitle":"warning signs (interlude)",
                         "trackOrder":8,
                         "trackFeatures":["None"],
-                        "trackLength": 77
+                        "trackLength": 77,
+                        "deezerId": "4182547652"
                     },
                     {
                         "trackTitle":"like i do",
                         "trackOrder":9,
                         "trackFeatures":["None"],
-                        "trackLength": 167
+                        "trackLength": 167,
+                        "deezerId": "4182547662"
                     },
                     {
                         "trackTitle":"never get over me",
                         "trackOrder":10,
                         "trackFeatures":["None"],
-                        "trackLength": 228
+                        "trackLength": 228,
+                        "deezerId": "4182547672"
                     },
                     {
                         "trackTitle":"bad thing (bunny hop)",
                         "trackOrder":11,
                         "trackFeatures":["None"],
-                        "trackLength": 208
+                        "trackLength": 208,
+                        "deezerId": "4182547682"
                     },
                     {
                         "trackTitle": "nowhere, nobody",
                         "trackOrder":12,
                         "trackFeatures":["None"],
-                        "trackLength": 172
+                        "trackLength": 172,
+                        "deezerId": "4182547692"
                     }
                 ]
         }
