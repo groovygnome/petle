@@ -46,23 +46,19 @@ function App() {
         let res = await fetch(`/api/dailies/${date}/${encoded}`, { method: 'POST' });
         todayAnswer = await res.json();
       }
-      setAnswer(getTrackInfo(todayAnswer[0].answer, arianaJSON));
+      let answerInfo = getTrackInfo(todayAnswer[0].answer, arianaJSON);
+      setAnswer(answerInfo);
 
-      const result = await fetch('/api/track/3135556');
+      const result = await fetch(`/api/track/${answerInfo.deezerId}`);
       const data = await result.json();
 
-      console.log(result.status);
-      console.log('content-type', result.headers.get('content-type'));
-      console.log('data', data);
       setDeezer(data.preview);
     }
 
     getPetle();
   }, []);
 
-  useEffect(() => {
-    console.log(deezer);
-  }, [deezer]);
+  console.log(answer);
 
   let arianArray = arianaJSON;
   attempts.forEach((attempt) => {
@@ -109,6 +105,8 @@ function App() {
     localStorage.setItem('X', Number(localStorage.getItem('X')) + 1);
   }
 
+  let audio = new Audio(deezer);
+
   return (
     <div id='app' onClick={closeAllLists}>
       <img id='logo' src={logo} />
@@ -135,9 +133,7 @@ function App() {
           {5 - attempts.length > 0 ?
             <p>audio hint in {5 - attempts.length} guess{5 - attempts.length > 1 && 'es'}</p>
             : showaHint ?
-              (<audio id='deezer' controls>
-                <source src={deezer} type='audio/mpeg' />
-              </audio>)
+              audio.play()
               : <p onClick={() => setShowaHint(true)}>hint available!</p>}
         </div>
       </div>
@@ -154,14 +150,14 @@ function getTrackInfo(key, disc) {
   let track = album.tracks[trackInd - 1];
   let cover = album.covers[0];
   if (albumInd === 7 && trackInd >= 14) cover = album.covers[7];
-  return { trackKey: albumInd + '#' + trackInd, albumNum: albumInd - 1, trackNum: trackInd - 1, img: cover, trackTitle: track.trackTitle, features: track.trackFeatures, trackLength: track.trackLength }
+  return { trackKey: albumInd + '#' + trackInd, albumNum: albumInd - 1, trackNum: trackInd - 1, img: cover, trackTitle: track.trackTitle, features: track.trackFeatures, trackLength: track.trackLength, deezerId: track.deezerId }
 }
 
 function calculateAnswer(disc) {
   let albumInd = Math.floor(Math.random() * disc.length);
   let album = disc[albumInd];
   let trackInd = Math.floor(Math.random() * album.tracks.length);
-  return (albumInd + 1) + '#' + (trackInd + 1);
+  return (albumInd) + '#' + (trackInd);
 }
 
 
