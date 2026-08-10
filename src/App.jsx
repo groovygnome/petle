@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './App.css'
 import arianaJSON from './assets/ariana.json'
 import Attempt from './Attempt.jsx'
@@ -12,10 +12,10 @@ function App() {
   const [filterShow, setFilterShow] = useState(false);
   const [showcHint, setShowcHint] = useState(false);
   const [showaHint, setShowaHint] = useState(false);
-  const [deezer, setDeezer] = useState({});
   const [answer, setAnswer] = useState({});
   const [correct, setCorrect] = useState(false);
   const [acDivs, setacDivs] = useState([]);
+  const deezerRef = useRef(null);
 
   if (localStorage.length === 0) {
     localStorage.setItem('streak', 0);
@@ -52,13 +52,11 @@ function App() {
       const result = await fetch(`/api/track/${answerInfo.deezerId}`);
       const data = await result.json();
 
-      setDeezer(data.preview);
+      deezerRef.current = new Audio(data.preview);
     }
 
     getPetle();
   }, []);
-
-  console.log(answer);
 
   let arianArray = arianaJSON;
   attempts.forEach((attempt) => {
@@ -96,6 +94,14 @@ function App() {
     setFilterShow(false);
   }
 
+  function handlePlay() {
+    if (deezerRef.current.paused) {
+      deezerRef.current?.play();
+    } else {
+      deezerRef.current?.pause();
+    }
+  }
+
 
   if (correct) {
     localStorage.setItem('streak', Number(localStorage.getItem('streak')) + 1);
@@ -104,8 +110,6 @@ function App() {
   if (!correct && attempts.length >= 8) {
     localStorage.setItem('X', Number(localStorage.getItem('X')) + 1);
   }
-
-  let audio = new Audio(deezer);
 
   return (
     <div id='app' onClick={closeAllLists}>
@@ -133,8 +137,8 @@ function App() {
           {5 - attempts.length > 0 ?
             <p>audio hint in {5 - attempts.length} guess{5 - attempts.length > 1 && 'es'}</p>
             : showaHint ?
-              audio.play()
-              : <p onClick={() => setShowaHint(true)}>hint available!</p>}
+              <button onClick={handlePlay}>play</button>
+              : <p onClick={() => { setShowaHint(true); handlePlay(); }}>hint available!</p>}
         </div>
       </div>
       <button onClick={async () => await fetch('/api/dailies/delete', { method: 'DELETE' })}>delete all db entries</button>
