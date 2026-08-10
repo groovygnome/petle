@@ -105,6 +105,11 @@ body{
   height: 7rem;
 }
 
+.audio-control{
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
 .attempt{
   display:grid;
   grid-template-columns: 2fr 2fr 1fr 1fr 2fr;

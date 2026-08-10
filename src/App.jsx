@@ -5,6 +5,8 @@ import Attempt from './Attempt.jsx'
 import AutoComplete from './AutoComplete.jsx'
 import Filter from './Filter.jsx'
 import logo from './assets/petlelogo.png'
+import play from './assets/play.svg'
+import Hint from './Hint.jsx'
 
 function App() {
   const [attempts, setAttempts] = useState([]);
@@ -94,15 +96,6 @@ function App() {
     setFilterShow(false);
   }
 
-  function handlePlay() {
-    if (deezerRef.current.paused) {
-      deezerRef.current?.play();
-    } else {
-      deezerRef.current?.pause();
-    }
-  }
-
-
   if (correct) {
     localStorage.setItem('streak', Number(localStorage.getItem('streak')) + 1);
     localStorage.setItem(attempts.length, Number(localStorage.getItem(attempts.length)) + 1);
@@ -126,20 +119,8 @@ function App() {
         {attempts}
       </div>
       <div id='hints'>
-        <div id='coverHint' className={'hint ' + (3 - attempts.length > 0 ? 'unavailable' : showcHint ? 'used' : 'available')}>
-          {3 - attempts.length > 0 ?
-            <p>cover art hint in {3 - attempts.length} guess{3 - attempts.length > 1 && 'es'}</p>
-            : showcHint ?
-              <img src={answer.img} />
-              : <p onClick={() => setShowcHint(true)}>hint available!</p>}
-        </div>
-        <div id='heardleHint' className={'hint ' + (5 - attempts.length > 0 ? 'unavailable' : showaHint ? 'used' : 'available')}>
-          {5 - attempts.length > 0 ?
-            <p>audio hint in {5 - attempts.length} guess{5 - attempts.length > 1 && 'es'}</p>
-            : showaHint ?
-              <button onClick={handlePlay}>play</button>
-              : <p onClick={() => { setShowaHint(true); handlePlay(); }}>hint available!</p>}
-        </div>
+        <Hint guessAmt={3 - attempts.length} audio={false} coverArt={answer.img} />
+        <Hint guessAmt={5 - attempts.length} audio={true} deezerRef={deezerRef} />
       </div>
       <button onClick={async () => await fetch('/api/dailies/delete', { method: 'DELETE' })}>delete all db entries</button>
     </div>
