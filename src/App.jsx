@@ -12,8 +12,6 @@ function App() {
   const [attempts, setAttempts] = useState([]);
   const [filter, setFilter] = useState(-1);
   const [filterShow, setFilterShow] = useState(false);
-  const [showcHint, setShowcHint] = useState(false);
-  const [showaHint, setShowaHint] = useState(false);
   const [answer, setAnswer] = useState({});
   const [correct, setCorrect] = useState(false);
   const [acDivs, setacDivs] = useState([]);
