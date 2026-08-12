@@ -5,10 +5,11 @@ import Attempt from './Attempt.jsx'
 import AutoComplete from './AutoComplete.jsx'
 import Filter from './Filter.jsx'
 import logo from './assets/petlelogo.png'
-import play from './assets/play.svg'
 import Hint from './Hint.jsx'
 
 function App() {
+  const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+
   const [attempts, setAttempts] = useState([]);
   const [filter, setFilter] = useState(-1);
   const [filterShow, setFilterShow] = useState(false);
@@ -28,6 +29,8 @@ function App() {
     localStorage.setItem(7, 0);
     localStorage.setItem(8, 0);
     localStorage.setItem('X', 0);
+    localStorage.setItem('lastCompleted', new Date('1993-6-26'));
+    localStorage.setItem('complete', false);
   }
 
   useEffect(() => {
@@ -94,12 +97,18 @@ function App() {
     setFilterShow(false);
   }
 
-  if (correct) {
-    localStorage.setItem('streak', Number(localStorage.getItem('streak')) + 1);
+  if (correct && localStorage.getItem('complete') === 'false') {
+    let today = new Date();
+    if ((today - new Date(localStorage.getItem('lastCompleted')).getTime()) < ONE_DAY_MS * 2) localStorage.setItem('streak', Number(localStorage.getItem('streak')) + 1);
+    else localStorage.setItem('streak', 1);
     localStorage.setItem(attempts.length, Number(localStorage.getItem(attempts.length)) + 1);
+    localStorage.setItem('lastCompleted', today);
+    localStorage.setItem('complete', true);
+
   }
-  if (!correct && attempts.length >= 8) {
+  if (!correct && attempts.length >= 8 && localStorage.getItem('complete') === 'false') {
     localStorage.setItem('X', Number(localStorage.getItem('X')) + 1);
+    localStorage.setItem('complete', true);
   }
 
   return (
