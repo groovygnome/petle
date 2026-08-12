@@ -19,10 +19,10 @@ function Hint({ guessAmt, coverArt, audio, deezerRef }) {
     return (
       <div id='coverHint' className={'hint ' + (guessAmt > 0 ? 'unavailable' : hint ? 'used' : 'available')}>
         {guessAmt > 0 ?
-          <p>cover art hint in {guessAmt} guess{guessAmt > 1 && 'es'}</p>
+          <p>album hint in {guessAmt} guess{guessAmt > 1 && 'es'}</p>
           : hint ?
             <img src={coverArt} />
-            : <p onClick={() => setHint(true)}>hint available!</p>}
+            : <p onClick={() => setHint(true)}>album hint available!</p>}
       </div>
     )
   } else {
@@ -32,7 +32,7 @@ function Hint({ guessAmt, coverArt, audio, deezerRef }) {
           <p>audio hint in {guessAmt} guess{guessAmt > 1 && 'es'}</p>
           : hint ?
             <img className='audio-control' onClick={handlePlay} src={play} />
-            : <p onClick={() => { setHint(true) }}>hint available!</p>}
+            : <p onClick={() => { setHint(true) }}>audio hint available!</p>}
       </div>
     )
   }
