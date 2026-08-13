@@ -10,13 +10,13 @@ import Hint from './Hint.jsx'
 function App() {
   const ONE_DAY_MS = 24 * 60 * 60 * 1000;
 
-  const [attempts, setAttempts] = useState([]);
+  const [attempts, setAttempts] = useState(() => new Array(8).fill(<Attempt empty={true} />));
   const [filter, setFilter] = useState(-1);
   const [filterShow, setFilterShow] = useState(false);
   const [answer, setAnswer] = useState({});
-  const [correct, setCorrect] = useState(false);
   const [acDivs, setacDivs] = useState([]);
   const deezerRef = useRef(null);
+  const currGuesses = useRef(-1);
 
   if (localStorage.length === 0) {
     localStorage.setItem('streak', 0);
@@ -62,11 +62,13 @@ function App() {
   }, []);
 
   let arianArray = arianaJSON;
-  attempts.forEach((attempt) => {
-    let key = attempt.props.trackInfo.trackKey.split('#');
-    let album = Number(key[0] - 1);
-    let track = Number(key[1] - 1);
-    arianArray[album].tracks[track].trackTitle = 'guessed';
+  attempts.forEach((attempt, index) => {
+    if (index <= currGuesses.current) {
+      let key = attempt.props.trackInfo.trackKey.split('#');
+      let album = Number(key[0] - 1);
+      let track = Number(key[1] - 1);
+      arianArray[album].tracks[track].trackTitle = 'guessed';
+    }
   });
   if (filter != -1) {
     arianArray = arianArray.filter(album => album.releaseOrder == filter);
@@ -84,11 +86,25 @@ function App() {
 
   function guessSong(song) {
     if (song === -1) return;
+    currGuesses.current += 1;
+    let i = currGuesses.current;
     let trackInfo = getTrackInfo(song, arianaJSON);
-    setAttempts([...attempts, (<Attempt key={attempts + 1} trackInfo={trackInfo} answer={answer} />)]);
+    setAttempts(prev => {
+      const copy = prev.slice();
+      copy[i] = <Attempt key={i} trackInfo={trackInfo} answer={answer} />;
+      return copy;
+    });
 
     if (trackInfo.trackKey === answer.trackKey) {
-      setCorrect(true);
+      let today = new Date();
+      if ((today - new Date(localStorage.getItem('lastCompleted')).getTime()) < ONE_DAY_MS * 2) localStorage.setItem('streak', Number(localStorage.getItem('streak')) + 1);
+      else localStorage.setItem('streak', 1);
+      localStorage.setItem(i, Number(localStorage.getItem(i)) + 1);
+      localStorage.setItem('lastCompleted', today);
+      localStorage.setItem('complete', true);
+    } else if (i >= 7) {
+      localStorage.setItem('X', Number(localStorage.getItem('X')) + 1);
+      localStorage.setItem('complete', true);
     }
   }
 
@@ -97,37 +113,23 @@ function App() {
     setFilterShow(false);
   }
 
-  if (correct && localStorage.getItem('complete') === 'false') {
-    let today = new Date();
-    if ((today - new Date(localStorage.getItem('lastCompleted')).getTime()) < ONE_DAY_MS * 2) localStorage.setItem('streak', Number(localStorage.getItem('streak')) + 1);
-    else localStorage.setItem('streak', 1);
-    localStorage.setItem(attempts.length, Number(localStorage.getItem(attempts.length)) + 1);
-    localStorage.setItem('lastCompleted', today);
-    localStorage.setItem('complete', true);
-
-  }
-  if (!correct && attempts.length >= 8 && localStorage.getItem('complete') === 'false') {
-    localStorage.setItem('X', Number(localStorage.getItem('X')) + 1);
-    localStorage.setItem('complete', true);
-  }
-
   return (
     <div id='app' onClick={closeAllLists}>
       <img id='logo' src={logo} />
-      {correct && <p>congrats u won</p>}
-      {(!correct && attempts.length >= 8) && <p>shoot u lost</p>}
+      {(localStorage.getItem('complete') === 'true' && attempts.length < 8) && <p>congrats u won</p>}
+      {(localStorage.getItem('complete') === 'true' && attempts.length >= 8) && <p>shoot u lost</p>}
       <div className='guessInput'>
-        <Filter arr={arianaJSON} setFilter={setFilter} closeAllLists={closeAllLists} disabled={(correct || attempts.length >= 8)}
+        <Filter arr={arianaJSON} setFilter={setFilter} closeAllLists={closeAllLists} disabled={(localStorage.getItem('complete') === 'true' || currGuesses.current >= 7)}
           show={filterShow} setShow={setFilterShow} />
         <AutoComplete arr={selectArray} acDivs={acDivs} setacDivs={setacDivs} closeAllLists={closeAllLists} guessSong={guessSong}
-          attLength={attempts.length} disabled={(correct || attempts.length >= 8)} />
+          attLength={currGuesses.current + 1} disabled={(localStorage.getItem('complete') === 'true' || currGuesses.current >= 7)} />
       </div>
       <div className='attempts'>
         {attempts}
       </div>
       <div id='hints'>
-        <Hint guessAmt={3 - attempts.length} audio={false} coverArt={answer.img} />
-        <Hint guessAmt={5 - attempts.length} audio={true} deezerRef={deezerRef} />
+        <Hint guessAmt={3 - currGuesses.current} audio={false} coverArt={answer.img} />
+        <Hint guessAmt={5 - currGuesses.current} audio={true} deezerRef={deezerRef} />
       </div>
       <button onClick={async () => await fetch('/api/dailies/delete', { method: 'DELETE' })}>delete all db entries</button>
     </div>

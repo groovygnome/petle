@@ -1,0 +1,120 @@
+.cube:nth-child(2) {animation-delay: .1s;}
+.cube:nth-child(3) {animation-delay: .2s;}
+.cube:nth-child(4) {animation-delay: .3s;}
+.cube:nth-child(5) {animation-delay: .4s;}
+
+.cube{
+  width: 100%;
+  height: 5rem;
+  position:relative;
+  transform-style: preserve-3d;
+  transition: all 0.075s ease-in-out;
+  pointer-events: all;
+}
+
+.animate{
+  animation-name: cube;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.disappear{
+  animation-name: disappear;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.front{
+  transform: translateZ(40px);
+  position: absolute;
+  width: 100%;
+}
+
+.top{
+  transform: rotateX(90deg) translateZ(40px);
+  position:absolute;
+  width:100%
+}
+
+@keyframes cube{
+  0%{
+    transform: rotateX(0deg);
+  }
+  75%{
+    transform: rotateX(-100deg);
+  }
+  100%{
+    transform: rotateX(-90deg);
+  }
+}
+
+@keyframes disappear{
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: .75;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+.attempt{
+  display:grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr 2fr;
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+.cube > *, .attempt > *{
+  border-radius: 1rem;
+}
+
+.cube > p, .attempt-features, .attempt-track{
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height:100%;
+}
+
+.correct, .available{
+  background-color: #699273; 
+}
+
+.incorrect, .unavailable, .empty{
+  background-color: #4e4e4e;
+}
+
+.empty{
+  height:5rem;
+}
+
+.almost{
+  background-color: #e7ca85;
+  color: black; 
+}
+
+.attempt-album{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.attempt-album > img{
+  width: 5rem;
+  height: 5rem;
+}
+
+.attempt-track{
+  display:flex;
+  align-items:center;
+  flex-direction: column;
+}
