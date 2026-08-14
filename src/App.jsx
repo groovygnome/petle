@@ -8,6 +8,8 @@ import logo from './assets/petlelogo.png'
 import Hint from './Hint.jsx'
 
 function App() {
+  let today = new Date();
+  today.setHours(0, 0, 0);
   const ONE_DAY_MS = 24 * 60 * 60 * 1000;
 
   const [attempts, setAttempts] = useState(() => new Array(8).fill(<Attempt empty={true} />));
@@ -30,12 +32,13 @@ function App() {
     localStorage.setItem(8, 0);
     localStorage.setItem('X', 0);
     localStorage.setItem('lastCompleted', new Date('1993-6-26'));
+    localStorage.setItem('currDate', JSON.stringify(today));
     localStorage.setItem('complete', false);
+    localStorage.setItem('guesses', JSON.stringify([]));
   }
 
   useEffect(() => {
     const getPetle = async () => {
-      let today = new Date();
       let date = today.getFullYear() + '-'
         + String(today.getMonth() + 1).padStart(2, '0') + '-'
         + String(today.getDate()).padStart(2, '0');
@@ -54,12 +57,27 @@ function App() {
 
       const result = await fetch(`/api/track/${answerInfo.deezerId}`);
       const data = await result.json();
-
       deezerRef.current = new Audio(data.preview);
     }
 
     getPetle();
   }, []);
+
+  useEffect(() => {
+    if (!answer?.deezerId) return;
+
+    if (new Date(JSON.parse(localStorage.getItem('currDate')) === today)) {
+      let prevGuesses = JSON.parse(localStorage.getItem('guesses')).slice();
+      prevGuesses.forEach(guess => {
+        guessSong(guess, false);
+      });
+    } else {
+      localStorage.setItem('guesses', JSON.stringify([]));
+      localStorage.setItem('complete', false);
+      localStorage.setItem('currDate', JSON.stringify(today));
+    }
+
+  }, [answer]);
 
   let arianArray = arianaJSON;
   attempts.forEach((attempt, index) => {
@@ -84,7 +102,7 @@ function App() {
     }
   }
 
-  function guessSong(song) {
+  function guessSong(song, add = true) {
     if (song === -1) return;
     currGuesses.current += 1;
     let i = currGuesses.current;
@@ -94,10 +112,14 @@ function App() {
       copy[i] = <Attempt key={i} trackInfo={trackInfo} answer={answer} />;
       return copy;
     });
+    if (add) {
+      let prevGuesses = JSON.parse(localStorage.getItem('guesses'));
+      prevGuesses.push(song);
+      localStorage.setItem('guesses', JSON.stringify(prevGuesses));
+    }
 
     if (trackInfo.trackKey === answer.trackKey) {
-      let today = new Date();
-      if ((today - new Date(localStorage.getItem('lastCompleted')).getTime()) < ONE_DAY_MS * 2) localStorage.setItem('streak', Number(localStorage.getItem('streak')) + 1);
+      if ((today - new Date(localStorage.getItem('lastCompleted')).getTime().setHours(0, 0, 0)) < ONE_DAY_MS * 2) localStorage.setItem('streak', Number(localStorage.getItem('streak')) + 1);
       else localStorage.setItem('streak', 1);
       localStorage.setItem(i, Number(localStorage.getItem(i)) + 1);
       localStorage.setItem('lastCompleted', today);
