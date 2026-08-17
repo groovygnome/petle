@@ -2,7 +2,7 @@ import { pool } from './pool.js'
 
 async function getDaily(date) {
     const { rows } = await pool.query('SELECT * FROM dailies WHERE dt = ($1)', [date]);
-    return rows;
+    return rows[0]?.answer ?? null;
 }
 
 async function deleteDailies() {
