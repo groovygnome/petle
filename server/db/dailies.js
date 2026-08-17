@@ -11,6 +11,7 @@ async function deleteDailies() {
 
 async function newDaily(date, answer) {
     await pool.query('INSERT INTO dailies (dt, answer) VALUES ($1, $2)', [date, answer]);
+    return answer;
 }
 
 export default { getDaily, deleteDailies, newDaily }
