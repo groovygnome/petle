@@ -8,8 +8,7 @@ import logo from './assets/petlelogo.png'
 import Hint from './Hint.jsx'
 
 function App() {
-  let today = new Date();
-  today.setHours(0, 0, 0);
+  let today = new Date().toISOString().slice(0, 10);
   const ONE_DAY_MS = 24 * 60 * 60 * 1000;
 
   const [attempts, setAttempts] = useState(() => new Array(8).fill(<Attempt empty={true} />));
@@ -31,31 +30,28 @@ function App() {
     localStorage.setItem(7, 0);
     localStorage.setItem(8, 0);
     localStorage.setItem('X', 0);
-    localStorage.setItem('lastCompleted', new Date('1993-6-26'));
-    localStorage.setItem('currDate', JSON.stringify(today));
+    localStorage.setItem('lastCompleted', '1993-6-26');
+    localStorage.setItem('currDate', today);
     localStorage.setItem('complete', false);
     localStorage.setItem('guesses', JSON.stringify([]));
   }
 
   useEffect(() => {
     const getPetle = async () => {
-      let date = today.getFullYear() + '-'
-        + String(today.getMonth() + 1).padStart(2, '0') + '-'
-        + String(today.getDate()).padStart(2, '0');
 
-      let res = await fetch(`/api/dailies/${date}`);
+
+      let res = await fetch(`/api/dailies/${today}`);
       let todayAnswer = await res.json();
 
-      if (todayAnswer.length === 0) {
-        let answerCode = calculateAnswer(arianaJSON);
-        let encoded = encodeURIComponent(answerCode);
-        let res = await fetch(`/api/dailies/${date}/${encoded}`, { method: 'POST' });
-        todayAnswer = await res.json();
+      if (!todayAnswer) {
+        todayAnswer = calculateAnswer(arianaJSON);
+        let encoded = encodeURIComponent(todayAnswer);
+        await fetch(`/api/dailies/${today}/${encoded}`, { method: 'POST' });
       }
-      let answerInfo = getTrackInfo(todayAnswer[0].answer, arianaJSON);
+      let answerInfo = getTrackInfo(todayAnswer, arianaJSON);
       setAnswer(answerInfo);
 
-      const result = await fetch(`/api/track/${answerInfo.deezerId}`);
+      const result = await fetch(`/deezer/${answerInfo.deezerId}`);
       const data = await result.json();
       deezerRef.current = new Audio(data.preview);
     }
@@ -66,7 +62,9 @@ function App() {
   useEffect(() => {
     if (!answer?.deezerId) return;
 
-    if (new Date(JSON.parse(localStorage.getItem('currDate')) === today)) {
+    let savedDate = localStorage.getItem('currDate');
+
+    if (savedDate === today) {
       let prevGuesses = JSON.parse(localStorage.getItem('guesses')).slice();
       prevGuesses.forEach(guess => {
         guessSong(guess, false);
@@ -74,7 +72,7 @@ function App() {
     } else {
       localStorage.setItem('guesses', JSON.stringify([]));
       localStorage.setItem('complete', false);
-      localStorage.setItem('currDate', JSON.stringify(today));
+      localStorage.setItem('currDate', today);
     }
 
   }, [answer]);
@@ -119,7 +117,7 @@ function App() {
     }
 
     if (trackInfo.trackKey === answer.trackKey) {
-      if ((today - new Date(localStorage.getItem('lastCompleted')).getTime().setHours(0, 0, 0)) < ONE_DAY_MS * 2) localStorage.setItem('streak', Number(localStorage.getItem('streak')) + 1);
+      if ((today - new Date(localStorage.getItem('lastCompleted')).toISOString().slice(0, 10)) < ONE_DAY_MS * 2) localStorage.setItem('streak', Number(localStorage.getItem('streak')) + 1);
       else localStorage.setItem('streak', 1);
       localStorage.setItem(i, Number(localStorage.getItem(i)) + 1);
       localStorage.setItem('lastCompleted', today);
@@ -138,8 +136,8 @@ function App() {
   return (
     <div id='app' onClick={closeAllLists}>
       <img id='logo' src={logo} />
-      {(localStorage.getItem('complete') === 'true' && attempts.length < 8) && <p>congrats u won</p>}
-      {(localStorage.getItem('complete') === 'true' && attempts.length >= 8) && <p>shoot u lost</p>}
+      {(localStorage.getItem('complete') === 'true' && currGuesses.current < 8) && <p>congrats u won</p>}
+      {(localStorage.getItem('complete') === 'true' && currGuesses.current >= 8) && <p>shoot u lost</p>}
       <div className='guessInput'>
         <Filter arr={arianaJSON} setFilter={setFilter} closeAllLists={closeAllLists} disabled={(localStorage.getItem('complete') === 'true' || currGuesses.current >= 7)}
           show={filterShow} setShow={setFilterShow} />
