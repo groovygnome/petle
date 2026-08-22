@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import play from './assets/play.svg';
+import play from '../assets/play.svg';
 
 function Hint({ guessAmt, coverArt, audio, deezerRef }) {
   const [hint, setHint] = useState(false);

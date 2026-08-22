@@ -1,5 +1,29 @@
-import './Attempt.css'
-function Attempt({ trackInfo, answer, empty = false }) {
+import '../styles/Attempt.css'
+function Attempt({ trackInfo, answer, empty = false, type }) {
+
+  if (type === 'album' && empty) {
+    return (
+      <div className='attempt'>
+        <div className={'attempt-album empty'}>
+        </div>
+      </div>
+    )
+  }
+
+  if (type === 'album' && !empty) {
+    return (
+      <div className='attempt'>
+        <div className='cube animate'>
+          <div className={`attempt-album top ${trackInfo.albumNum === answer.albumNum ? 'correct' : 'incorrect'}`} >
+            <img src={trackInfo.img} />
+            <p>{trackInfo.title}</p>
+            <p>{trackInfo.year}</p>
+          </div>
+          <div className='attempt-album empty front disappear'></div>
+        </div>
+      </div >
+    )
+  }
 
   if (empty) {
     return (

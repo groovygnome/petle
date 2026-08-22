@@ -1,6 +1,6 @@
-import music from './assets/music.svg'
-import gap from './assets/gap.png'
-import dropdown from './assets/dropdown.svg'
+import music from '../assets/music.svg'
+import gap from '../assets/gap.png'
+import dropdown from '../assets/dropdown.svg'
 import { useState } from 'react'
 
 function Filter({ arr, setFilter, closeAllLists, disabled, show, setShow }) {

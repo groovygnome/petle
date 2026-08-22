@@ -1,6 +1,6 @@
 @font-face{
   font-family: stixtwotext;
-  src: url(./assets/stixtwotext.ttf);
+  src: url(../assets/stixtwotext.ttf);
 }
 
 #app{
@@ -73,7 +73,7 @@
 }
 
 body{
-  background-image: url(./assets/background.png);
+  background-image: url(../assets/background.png);
   background-size: cover;
   color: #f6f6f6;
   font-family: stixtwotext, sans-serif;
