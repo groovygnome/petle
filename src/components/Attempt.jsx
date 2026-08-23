@@ -14,7 +14,7 @@ function Attempt({ trackInfo, answer, empty = false, type }) {
     return (
       <div className='attempt'>
         <div className='cube animate'>
-          <div className={`attempt-album top ${trackInfo.albumNum === answer.albumNum ? 'correct' : 'incorrect'}`} >
+          <div className={`attempt-album top ${trackInfo.albumInd === answer.albumInd ? 'correct' : 'incorrect'}`} >
             <img src={trackInfo.img} />
             <p>{trackInfo.title}</p>
             <p>{trackInfo.year}</p>
@@ -55,19 +55,19 @@ function Attempt({ trackInfo, answer, empty = false, type }) {
         <p className='empty front disappear'></p>
       </div>
       <div className='cube animate'>
-        <div className={`attempt-album top ${trackInfo.albumNum === answer.albumNum
+        <div className={`attempt-album top ${trackInfo.albumInd === answer.albumInd
           ? 'correct'
-          : trackInfo.albumNum > answer.albumNum
-            ? Math.abs(trackInfo.albumNum - answer.albumNum) <= 2
+          : trackInfo.albumInd > answer.albumInd
+            ? Math.abs(trackInfo.albumInd - answer.albumInd) <= 2
               ? 'almost greaterthan'
               : 'greaterthan incorrect'
-            : Math.abs(trackInfo.albumNum - answer.albumNum) <= 2
+            : Math.abs(trackInfo.albumInd - answer.albumInd) <= 2
               ? 'almost lessthan'
               : 'lessthan incorrect'} `}>
-          <img src={trackInfo.img} className={trackInfo.albumNum === answer.albumNum ? 'correct' : 'incorrect'} />
-          <p>{trackInfo.albumNum === answer.albumNum
+          <img src={trackInfo.img} className={trackInfo.albumInd === answer.albumInd ? 'correct' : 'incorrect'} />
+          <p>{trackInfo.albumInd === answer.albumInd
             ? '='
-            : trackInfo.albumNum > answer.albumNum
+            : trackInfo.albumInd > answer.albumInd
               ? '↓'
               : '↑'}
           </p>
@@ -75,19 +75,19 @@ function Attempt({ trackInfo, answer, empty = false, type }) {
         <div className='attempt-album empty front disappear'></div>
       </div>
       <div className='cube animate'>
-        <div className={`attempt-track top ${trackInfo.trackNum === answer.trackNum
+        <div className={`attempt-track top ${trackInfo.trackInd === answer.trackInd
           ? 'correct'
-          : trackInfo.trackNum > answer.trackNum
-            ? Math.abs(trackInfo.trackNum - answer.trackNum) <= 2
+          : trackInfo.trackInd > answer.trackInd
+            ? Math.abs(trackInfo.trackInd - answer.trackInd) <= 2
               ? 'almost greaterthan'
               : 'greaterthan incorrect'
-            : Math.abs(trackInfo.trackNum - answer.trackNum) <= 2
+            : Math.abs(trackInfo.trackInd - answer.trackInd) <= 2
               ? 'almost lessthan'
               : 'lessthan incorrect'} `}>
-          <p>{trackInfo.trackNum + 1}</p>
-          <p>{trackInfo.trackNum === answer.trackNum
+          <p>{trackInfo.trackInd + 1}</p>
+          <p>{trackInfo.trackInd === answer.trackInd
             ? '='
-            : trackInfo.trackNum > answer.trackNum
+            : trackInfo.trackInd > answer.trackInd
               ? '↓'
               : '↑'}
           </p>

@@ -81,22 +81,20 @@ function Petle() {
   attempts.forEach((attempt, index) => {
     if (index <= currGuesses.current) {
       let key = attempt.props.trackInfo.trackKey.split('#');
-      let album = Number(key[0] - 1);
-      let track = Number(key[1] - 1);
+      let album = Number(key[0]);
+      let track = Number(key[1]);
       arianArray[album].tracks[track].trackTitle = 'guessed';
     }
   });
-  if (filter != -1) {
-    arianArray = arianArray.filter(album => album.releaseOrder == filter);
-  }
 
 
   let selectArray = [];
   for (let albumKey in arianArray) {
-    let album = arianArray[albumKey]
+    if (filter != -1 && albumKey != filter) continue;
+    let album = arianArray[albumKey];
     for (let trackKey in album.tracks) {
       let track = album.tracks[trackKey];
-      selectArray.push([track.trackTitle, (album.releaseOrder + '#' + track.trackOrder)]);
+      selectArray.push([track.trackTitle, (albumKey + '#' + trackKey)]);
     }
   }
 
@@ -160,18 +158,18 @@ function Petle() {
 function getTrackInfo(key, disc) {
   key = key.split('#');
   let albumInd = Number(key[0]);
-  let album = disc[albumInd - 1];
+  let album = disc[albumInd];
   let trackInd = Number(key[1]);
-  let track = album.tracks[trackInd - 1];
+  let track = album.tracks[trackInd];
   let cover = album.covers[0];
   if (albumInd === 7 && trackInd >= 14) cover = album.covers[7];
-  return { trackKey: albumInd + '#' + trackInd, albumNum: albumInd - 1, trackNum: trackInd - 1, img: cover, trackTitle: track.trackTitle, features: track.trackFeatures, trackLength: track.trackLength, deezerId: track.deezerId }
+  return { trackKey: albumInd + '#' + trackInd, albumInd: albumInd, trackInd: trackInd, img: cover, trackTitle: track.trackTitle, features: track.trackFeatures, trackLength: track.trackLength, deezerId: track.deezerId }
 }
 
 function calculateAnswer(disc) {
-  let albumInd = Math.floor(Math.random() * disc.length);
+  let albumInd = Math.floor(Math.random() * disc.length) - 1;
   let album = disc[albumInd];
-  let trackInd = Math.floor(Math.random() * album.tracks.length);
+  let trackInd = Math.floor(Math.random() * album.tracks.length) - 1;
   return (albumInd) + '#' + (trackInd);
 }
 
