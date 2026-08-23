@@ -43,7 +43,7 @@ function CoverArt() {
         let encoded = encodeURIComponent(todayAnswer);
         await fetch(`/api/covers/${today}/${encoded}`, { method: 'POST' });
       }
-      setAnswer(todayAnswer);
+      setAnswer(getCoverInfo(todayAnswer, arianaJSON));
 
     }
 
@@ -70,22 +70,9 @@ function CoverArt() {
   let arianArray = arianaJSON;
   attempts.forEach((attempt, index) => {
     if (index <= currGuesses.current) {
-      let key = attempt.props.albumNum;
-      let album = Number(key[0] - 1);
-      let track = Number(key[1] - 1);
-      arianArray[album].tracks[track].trackTitle = 'guessed';
+      arianArray[attempt.props.albumNum].title = 'guessed';
     }
   });
-
-
-  let selectArray = [];
-  for (let albumKey in arianArray) {
-    let album = arianArray[albumKey]
-    for (let trackKey in album.tracks) {
-      let track = album.tracks[trackKey];
-      selectArray.push([track.trackTitle, (album.releaseOrder + '#' + track.trackOrder)]);
-    }
-  }
 
   function guessAlbum(album, add = true) {
     if (album === -1) return;
@@ -119,9 +106,12 @@ function CoverArt() {
     setFilterShow(false);
   }
 
+  console.log(answer);
+
   return (
     <div id='app' onClick={closeAllLists}>
       <img id='logo' src={logo} />
+      <img id='coverToGuess' src={answer.img} />
       {(localStorage.getItem('complete') === 'true' && currGuesses.current < 5) && <p>congrats u won</p>}
       {(localStorage.getItem('complete') === 'true' && currGuesses.current >= 5) && <p>shoot u lost</p>}
       <div className='guessInput'>
@@ -137,10 +127,14 @@ function CoverArt() {
 }
 
 function getCoverInfo(key, disc) {
-  let albumInd = Number(key[0]);
-  let album = disc[albumInd - 1];
-  let cover = album.covers[0];
-  return { albumNum: albumInd - 1, img: cover }
+  let coverKey = key.split('#');
+  let albumInd = Number(coverKey[0]);
+  let album = disc[albumInd];
+  let coverInd = Number(coverKey[1]);
+  let cover = album.covers[coverInd];
+  return {
+    albumNum: albumInd, img: cover
+  }
 }
 
 function calculateAnswer(disc) {

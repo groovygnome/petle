@@ -3,8 +3,8 @@ const router = express.Router();
 
 import controller from '../controllers/DailiesController.js';
 
-router.get('/dailies/:date', controller.getDaily);
-router.delete('/dailies/delete', controller.deleteDailies);
-router.post('/dailies/:date/:answer', controller.newDaily);
+router.get('/:db/:date', controller.getDaily);
+router.delete('/:db/delete', controller.deleteDailies);
+router.post('/:db/:date/:answer', controller.newDaily);
 
 export default router;
