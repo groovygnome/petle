@@ -1,0 +1,34 @@
+.rotate90{
+  transform: rotate(90deg);
+}
+
+.rotate180{
+  transform: rotate(180deg);
+}
+
+.rotate270{
+  transform: rotate(270deg);
+}
+
+.guess-1{
+  filter: grayscale(100%) hue-rotate(180deg) invert(100%) blur(15px);
+}
+
+.guess0{
+  filter: grayscale(100%) hue-rotate(180deg) invert(100%) blur(10px);
+}
+
+.guess1{
+  filter: hue-rotate(180deg) invert(100%) blur(10px);
+}
+
+.guess2{
+
+}
+
+.guess3{
+
+}
+
+.guess4{
+}

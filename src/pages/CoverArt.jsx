@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import '../styles/Petle.css'
+import '../styles/CoverArt.css'
 import arianaJSON from '../assets/ariana.json'
 import Attempt from '../components/Attempt.jsx'
 import Filter from '../components/Filter.jsx'
@@ -70,7 +70,7 @@ function CoverArt() {
   let arianArray = arianaJSON;
   attempts.forEach((attempt, index) => {
     if (index <= currGuesses.current) {
-      arianArray[attempt.props.albumNum].title = 'guessed';
+      arianArray[attempt.props.trackInfo.albumNum].title = 'guessed';
     }
   });
 
@@ -78,7 +78,7 @@ function CoverArt() {
     if (album === -1) return;
     currGuesses.current += 1;
     let i = currGuesses.current;
-    let coverInfo = getCoverInfo(album, arianaJSON);
+    let coverInfo = getCoverInfo(album + '#0', arianaJSON);
     setAttempts(prev => {
       const copy = prev.slice();
       copy[i] = <Attempt key={i} trackInfo={coverInfo} answer={answer} type={'album'} />;
@@ -86,11 +86,11 @@ function CoverArt() {
     });
     if (add) {
       let prevGuesses = JSON.parse(localStorage.getItem('guesses'));
-      prevGuesses.push(cover);
+      prevGuesses.push(album);
       localStorage.setItem('guesses', JSON.stringify(prevGuesses));
     }
 
-    if (coverInfo.albumNum === answer[0]) {
+    if (coverInfo.albumNum === answer.albumNum) {
       if ((today - new Date(localStorage.getItem('lastCompleted')).toISOString().slice(0, 10)) < ONE_DAY_MS * 2) localStorage.setItem('streak', Number(localStorage.getItem('streak')) + 1);
       else localStorage.setItem('streak', 1);
       localStorage.setItem(i, Number(localStorage.getItem(i)) + 1);
@@ -106,19 +106,18 @@ function CoverArt() {
     setFilterShow(false);
   }
 
-  console.log(answer);
 
   return (
     <div id='app' onClick={closeAllLists}>
       <img id='logo' src={logo} />
-      <img id='coverToGuess' src={answer.img} />
-      {(localStorage.getItem('complete') === 'true' && currGuesses.current < 5) && <p>congrats u won</p>}
-      {(localStorage.getItem('complete') === 'true' && currGuesses.current >= 5) && <p>shoot u lost</p>}
+      {(localStorage.getItem('complete') === 'true' && currGuesses.current < 4) && <p>congrats u won</p>}
+      {(localStorage.getItem('complete') === 'true' && currGuesses.current >= 4) && <p>shoot u lost</p>}
+      <img id='coverToGuess' className={'guess' + currGuesses.current} src={answer.img} />
       <div className='guessInput'>
-        <Filter arr={arianaJSON} setFilter={guessAlbum} closeAllLists={closeAllLists} disabled={(localStorage.getItem('complete') === 'true' || currGuesses.current >= 5)}
+        <Filter arr={arianaJSON} setFilter={guessAlbum} closeAllLists={closeAllLists} disabled={(localStorage.getItem('complete') === 'true' || currGuesses.current >= 4)}
           show={filterShow} setShow={setFilterShow} />
       </div>
-      <div className='attempts'>
+      <div className='coverAttempts'>
         {attempts}
       </div>
       <button onClick={async () => await fetch('/api/covers/delete', { method: 'DELETE' })}>delete all db entries</button>
@@ -133,7 +132,7 @@ function getCoverInfo(key, disc) {
   let coverInd = Number(coverKey[1]);
   let cover = album.covers[coverInd];
   return {
-    albumNum: albumInd, img: cover
+    albumNum: albumInd, img: cover, title: album.title, year: album.year
   }
 }
 

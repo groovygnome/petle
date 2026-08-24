@@ -3,23 +3,24 @@ function Attempt({ trackInfo, answer, empty = false, type }) {
 
   if (type === 'album' && empty) {
     return (
-      <div className='attempt'>
-        <div className={'attempt-album empty'}>
+      <div className='coverAttempt'>
+        <div className={'attempt-cover empty'}>
         </div>
       </div>
     )
   }
 
   if (type === 'album' && !empty) {
+    console.log(trackInfo);
     return (
-      <div className='attempt'>
+      <div className='coverAttempt'>
         <div className='cube animate'>
-          <div className={`attempt-album top ${trackInfo.albumInd === answer.albumInd ? 'correct' : 'incorrect'}`} >
+          <div className={`attempt-cover top ${trackInfo.albumNum === answer.albumNum ? 'correct' : 'incorrect'}`} >
             <img src={trackInfo.img} />
             <p>{trackInfo.title}</p>
             <p>{trackInfo.year}</p>
           </div>
-          <div className='attempt-album empty front disappear'></div>
+          <div className='attempt-cover empty front disappear'></div>
         </div>
       </div >
     )

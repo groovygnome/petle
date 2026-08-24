@@ -87,6 +87,12 @@ body{
   grid-template-rows: repeat(8, 1fr);
 }
 
+.coverAttempts{
+  padding-top:2rem;
+  text-align:center;
+  width:40vw;
+}
+
 #hints{
   display: grid;
   grid-template-columns: 1fr 1fr;

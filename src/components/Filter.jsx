@@ -10,14 +10,17 @@ function Filter({ arr, setFilter, closeAllLists, disabled, show, setShow }) {
   let albumDivs = [];
   albumDivs.push(<div onClick={(() => { setFilter(-1); closeAllLists(); setFilterDisplay({ img: gap, title: `filter by album...` }) })}
     className='filter-choice allalbums' key={-1} value={-1}><img src={music} /><p>all albums</p><p></p></div >)
-  arr.forEach((album, index) => (
-    albumDivs.push(
-      <div onClick={() => { setFilter(index); setFilterDisplay({ img: album.covers[0], title: album.title }) }} className='filter-choice' key={album.releaseOrder} value={album.releaseOrder}>
-        <img src={album.covers[0]} />
-        <p>{album.title}</p>
-        <p>{album.year}</p>
-      </div>
-    )))
+  arr.forEach((album, index) => {
+    if (album.title != 'guessed') {
+      albumDivs.push(
+        <div onClick={() => { setFilter(index); setFilterDisplay({ img: album.covers[0], title: album.title }) }} className='filter-choice' key={index} value={index}>
+          <img src={album.covers[0]} />
+          <p>{album.title}</p>
+          <p>{album.year}</p>
+        </div>
+      )
+    }
+  })
 
   return (
     <div className='filter'>
