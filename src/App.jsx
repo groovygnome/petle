@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import Petle from './pages/Petle';
 import CoverArt from './pages/CoverArt';
-//import Infinite from './pages/Infinte';
+import Infinite from './pages/Infinite';
 
 
 function App() {
@@ -24,11 +24,10 @@ function App() {
             path="/coverArt"
             element={<CoverArt />}
           />
-          { /**<Route
+          <Route
             path="/infinite"
             element={<Infinite />}
           />
-**/}
           <Route
             path="*"
             element={<Navigate to="/" />}

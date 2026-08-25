@@ -7,7 +7,7 @@ function AutoComplete({ arr, acDivs, setacDivs, closeAllLists, guessSong, attLen
 
     let autoCompleteDivs = [];
     for (let i = 0; i < arr.length; i++) {
-      if (arr[i][0].substring(0, val.length).toUpperCase() == val.toUpperCase() && !arr[i][0].guessed) {
+      if (arr[i][0].substring(0, val.length).toUpperCase() == val.toUpperCase() && !arr[i][2]) {
         autoCompleteDivs.push((
           <div key={arr[i][1]} onClick={() => { e.target.value = ''; guessSong(arr[i][1]); closeAllLists(); }}>
             {arr[i][0]}

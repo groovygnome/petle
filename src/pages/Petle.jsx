@@ -11,13 +11,14 @@ function Petle() {
   let today = new Date().toISOString().slice(0, 10);
   const ONE_DAY_MS = 24 * 60 * 60 * 1000;
 
-  const [attempts, setAttempts] = useState(() => new Array(8).fill(<Attempt empty={true} />));
+  const [attempts, setAttempts] = useState(() => Array.from({ length: 8 }, (_, index) => ({ id: index, empty: true })));
   const [filter, setFilter] = useState(-1);
   const [filterShow, setFilterShow] = useState(false);
   const [answer, setAnswer] = useState({});
   const [acDivs, setacDivs] = useState([]);
   const deezerRef = useRef(null);
   const currGuesses = useRef(-1);
+  const arianArray = useRef(structuredClone(arianaJSON));
 
   if (localStorage.length === 0) {
     localStorage.setItem('streak', 0);
@@ -77,24 +78,23 @@ function Petle() {
 
   }, [answer]);
 
-  let arianArray = arianaJSON;
   attempts.forEach((attempt, index) => {
     if (index <= currGuesses.current) {
-      let key = attempt.props.trackInfo.trackKey.split('#');
+      let key = attempt.trackInfo.trackKey.split('#');
       let album = Number(key[0]);
       let track = Number(key[1]);
-      arianArray[album].tracks[track].guessed = true;
+      arianArray.current[album].tracks[track].guessed = true;
     }
   });
 
 
   let selectArray = [];
-  for (let albumKey in arianArray) {
+  for (let albumKey in arianArray.current) {
     if (filter != -1 && albumKey != filter) continue;
-    let album = arianArray[albumKey];
+    let album = arianArray.current[albumKey];
     for (let trackKey in album.tracks) {
       let track = album.tracks[trackKey];
-      selectArray.push([track.trackTitle, (albumKey + '#' + trackKey)]);
+      selectArray.push([track.trackTitle, (albumKey + '#' + trackKey), track.guessed]);
     }
   }
 
@@ -105,7 +105,7 @@ function Petle() {
     let trackInfo = getTrackInfo(song, arianaJSON);
     setAttempts(prev => {
       const copy = prev.slice();
-      copy[i] = <Attempt key={i} trackInfo={trackInfo} answer={answer} />;
+      copy[i] = { id: i, empty: false, trackInfo: trackInfo };
       return copy;
     });
     if (add) {
@@ -143,7 +143,13 @@ function Petle() {
           attLength={currGuesses.current + 1} disabled={(localStorage.getItem('complete') === 'true' || currGuesses.current >= 7)} />
       </div>
       <div className='attempts'>
-        {attempts}
+        {attempts.map(attempt => (
+          <Attempt
+            key={attempt.id}
+            empty={attempt.empty}
+            trackInfo={attempt.trackInfo}
+            answer={answer} />))
+        }
       </div>
       <div id='hints'>
         <Hint guessAmt={3 - currGuesses.current} audio={false} coverArt={answer.img} />
@@ -151,6 +157,7 @@ function Petle() {
       </div>
       <button onClick={async () => await fetch('/api/dailies/delete', { method: 'DELETE' })}>delete all db entries</button>
       <Link to='/coverArt'>guess the cover</Link>
+      <Link to='/infinite'>infinite petle</Link>
     </div>
   )
 }
@@ -167,9 +174,9 @@ function getTrackInfo(key, disc) {
 }
 
 function calculateAnswer(disc) {
-  let albumInd = Math.floor(Math.random() * disc.length) - 1;
+  let albumInd = Math.floor(Math.random() * disc.length);
   let album = disc[albumInd];
-  let trackInd = Math.floor(Math.random() * album.tracks.length) - 1;
+  let trackInd = Math.floor(Math.random() * album.tracks.length);
   return (albumInd) + '#' + (trackInd);
 }
 

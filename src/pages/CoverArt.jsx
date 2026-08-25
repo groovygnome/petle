@@ -14,6 +14,7 @@ function CoverArt() {
   const [filterShow, setFilterShow] = useState(false);
   const [answer, setAnswer] = useState({});
   const currGuesses = useRef(-1);
+  const arianArray = useRef(structuredClone(arianaJSON));
 
   if (localStorage.length === 0) {
     localStorage.setItem('coverstreak', 0);
@@ -65,10 +66,9 @@ function CoverArt() {
     }
   }, [answer]);
 
-  let arianArray = arianaJSON;
   attempts.forEach((attempt, index) => {
     if (index <= currGuesses.current) {
-      arianArray[attempt.props.trackInfo.albumNum].guessed = true;
+      arianArray.current[attempt.props.trackInfo.albumNum].guessed = true;
     }
   });
 
