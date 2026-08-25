@@ -26,7 +26,7 @@
   
 }
 
-.autocomplete, .filter {
+.autocomplete, .albumList {
   position:relative;
   display: inline-block;
 }
@@ -37,15 +37,15 @@
   font-size: 16px;
 }
 
-.autocomplete-items, .filter-items, .filter{
+.autocomplete-items, .albumlist-items, .albumList{
   border: 1px solid #d4d4d4;
 }
 
-.filter{
+.albumList{
   display:block;
 }
     
-.autocomplete-items, .filter-items {
+.autocomplete-items, .albumlist-items {
   position: absolute;
   border-bottom: none;
   border-top : none;
@@ -56,14 +56,14 @@
 }
 
 
-.autocomplete-items div, .filter-items div, #filter-display {
+.autocomplete-items div, .albumlist-items div, #album-display {
   padding: 10px;
   cursor: pointer;
   background-color: #181817;
   border-bottom: 1px solid #d4d4d4;
 }
 
-.autocomplete-items div:hover, .filter-items div:hover{
+.autocomplete-items div:hover, .albumlist-items div:hover{
   background-color: #292928;
 }
 
@@ -127,13 +127,13 @@ body{
   color: black; 
 }
 
-.filter-choice, #filter-display{
+.album-choice, #album-display{
   display:flex;
   align-items:center;
   justify-content: space-between;
 }
 
-.filter-choice > img, #filter-display > img{
+.album-choice > img, #album-display > img{
   height: 5rem;
   width:5rem;
 }

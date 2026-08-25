@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import arianaJSON from '../assets/ariana.json'
 import Attempt from '../components/Attempt.jsx'
 import AutoComplete from '../components/AutoComplete.jsx'
-import Filter from '../components/Filter.jsx'
+import AlbumList from '../components/AlbumList.jsx'
 import logo from '../assets/petlelogo.png'
 import Hint from '../components/Hint.jsx'
 import { Link } from 'react-router-dom';
@@ -83,7 +83,7 @@ function Petle() {
       let key = attempt.props.trackInfo.trackKey.split('#');
       let album = Number(key[0]);
       let track = Number(key[1]);
-      arianArray[album].tracks[track].trackTitle = 'guessed';
+      arianArray[album].tracks[track].guessed = true;
     }
   });
 
@@ -137,7 +137,7 @@ function Petle() {
       {(localStorage.getItem('complete') === 'true' && currGuesses.current < 8) && <p>congrats u won</p>}
       {(localStorage.getItem('complete') === 'true' && currGuesses.current >= 8) && <p>shoot u lost</p>}
       <div className='guessInput'>
-        <Filter arr={arianaJSON} setFilter={setFilter} closeAllLists={closeAllLists} disabled={(localStorage.getItem('complete') === 'true' || currGuesses.current >= 7)}
+        <AlbumList arr={arianaJSON} click={setFilter} closeAllLists={closeAllLists} disabled={(localStorage.getItem('complete') === 'true' || currGuesses.current >= 7)}
           show={filterShow} setShow={setFilterShow} />
         <AutoComplete arr={selectArray} acDivs={acDivs} setacDivs={setacDivs} closeAllLists={closeAllLists} guessSong={guessSong}
           attLength={currGuesses.current + 1} disabled={(localStorage.getItem('complete') === 'true' || currGuesses.current >= 7)} />

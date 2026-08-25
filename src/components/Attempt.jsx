@@ -11,7 +11,6 @@ function Attempt({ trackInfo, answer, empty = false, type }) {
   }
 
   if (type === 'album' && !empty) {
-    console.log(trackInfo);
     return (
       <div className='coverAttempt'>
         <div className='cube animate'>

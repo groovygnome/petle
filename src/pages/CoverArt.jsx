@@ -2,8 +2,9 @@ import { useState, useEffect, useRef } from 'react'
 import '../styles/CoverArt.css'
 import arianaJSON from '../assets/ariana.json'
 import Attempt from '../components/Attempt.jsx'
-import Filter from '../components/Filter.jsx'
+import AlbumList from '../components/AlbumList.jsx'
 import logo from '../assets/petlelogo.png'
+import { Link } from 'react-router-dom';
 
 function CoverArt() {
   let today = new Date().toISOString().slice(0, 10);
@@ -15,20 +16,17 @@ function CoverArt() {
   const currGuesses = useRef(-1);
 
   if (localStorage.length === 0) {
-    localStorage.setItem('streak', 0);
-    localStorage.setItem(1, 0);
-    localStorage.setItem(2, 0);
-    localStorage.setItem(3, 0);
-    localStorage.setItem(4, 0);
-    localStorage.setItem(5, 0);
-    localStorage.setItem(6, 0);
-    localStorage.setItem(7, 0);
-    localStorage.setItem(8, 0);
-    localStorage.setItem('X', 0);
-    localStorage.setItem('lastCompleted', '1993-6-26');
-    localStorage.setItem('currDate', today);
-    localStorage.setItem('complete', false);
-    localStorage.setItem('guesses', JSON.stringify([]));
+    localStorage.setItem('coverstreak', 0);
+    localStorage.setItem('cover1', 0);
+    localStorage.setItem('cover2', 0);
+    localStorage.setItem('cover3', 0);
+    localStorage.setItem('cover4', 0);
+    localStorage.setItem('cover5', 0);
+    localStorage.setItem('coverX', 0);
+    localStorage.setItem('coverlastCompleted', '1993-6-26');
+    localStorage.setItem('covercurrDate', today);
+    localStorage.setItem('covercomplete', false);
+    localStorage.setItem('coverguesses', JSON.stringify([]));
   }
 
   useEffect(() => {
@@ -50,27 +48,27 @@ function CoverArt() {
     getPetle();
   }, []);
 
-  useEffect(() => {
 
-    let savedDate = localStorage.getItem('currDate');
+  useEffect(() => {
+    if (!answer?.albumNum) return;
+    let savedDate = localStorage.getItem('covercurrDate');
 
     if (savedDate === today) {
-      let prevGuesses = JSON.parse(localStorage.getItem('guesses')).slice();
+      let prevGuesses = JSON.parse(localStorage.getItem('coverguesses')).slice();
       prevGuesses.forEach(guess => {
         guessAlbum(guess, false);
       });
     } else {
-      localStorage.setItem('guesses', JSON.stringify([]));
-      localStorage.setItem('complete', false);
-      localStorage.setItem('currDate', today);
+      localStorage.setItem('coverguesses', JSON.stringify([]));
+      localStorage.setItem('covercomplete', false);
+      localStorage.setItem('covercurrDate', today);
     }
-
   }, [answer]);
 
   let arianArray = arianaJSON;
   attempts.forEach((attempt, index) => {
     if (index <= currGuesses.current) {
-      arianArray[attempt.props.trackInfo.albumNum].title = 'guessed';
+      arianArray[attempt.props.trackInfo.albumNum].guessed = true;
     }
   });
 
@@ -85,20 +83,20 @@ function CoverArt() {
       return copy;
     });
     if (add) {
-      let prevGuesses = JSON.parse(localStorage.getItem('guesses'));
+      let prevGuesses = JSON.parse(localStorage.getItem('coverguesses'));
       prevGuesses.push(album);
-      localStorage.setItem('guesses', JSON.stringify(prevGuesses));
+      localStorage.setItem('coverguesses', JSON.stringify(prevGuesses));
     }
 
     if (coverInfo.albumNum === answer.albumNum) {
-      if ((today - new Date(localStorage.getItem('lastCompleted')).toISOString().slice(0, 10)) < ONE_DAY_MS * 2) localStorage.setItem('streak', Number(localStorage.getItem('streak')) + 1);
-      else localStorage.setItem('streak', 1);
-      localStorage.setItem(i, Number(localStorage.getItem(i)) + 1);
-      localStorage.setItem('lastCompleted', today);
-      localStorage.setItem('complete', true);
+      if ((today - new Date(localStorage.getItem('coverlastCompleted')).toISOString().slice(0, 10)) < ONE_DAY_MS * 2) localStorage.setItem('coverstreak', Number(localStorage.getItem('coverstreak')) + 1);
+      else localStorage.setItem('coverstreak', 1);
+      localStorage.setItem('cover' + i, Number(localStorage.getItem('cover' + i)) + 1);
+      localStorage.setItem('coverlastCompleted', today);
+      localStorage.setItem('covercomplete', true);
     } else if (i >= 5) {
-      localStorage.setItem('X', Number(localStorage.getItem('X')) + 1);
-      localStorage.setItem('complete', true);
+      localStorage.setItem('coverX', Number(localStorage.getItem('X')) + 1);
+      localStorage.setItem('covercomplete', true);
     }
   }
 
@@ -110,17 +108,18 @@ function CoverArt() {
   return (
     <div id='app' onClick={closeAllLists}>
       <img id='logo' src={logo} />
-      {(localStorage.getItem('complete') === 'true' && currGuesses.current < 4) && <p>congrats u won</p>}
-      {(localStorage.getItem('complete') === 'true' && currGuesses.current >= 4) && <p>shoot u lost</p>}
-      <img id='coverToGuess' className={'guess' + currGuesses.current} src={answer.img} />
+      {(localStorage.getItem('covercomplete') === 'true' && currGuesses.current < 4) && <p>congrats u won</p>}
+      {(localStorage.getItem('covercomplete') === 'true' && currGuesses.current >= 4) && <p>shoot u lost</p>}
+      <img id='coverToGuess' className={localStorage.getItem('covercomplete') === 'true' ? '' : 'guess' + currGuesses.current} src={answer.img} />
       <div className='guessInput'>
-        <Filter arr={arianaJSON} setFilter={guessAlbum} closeAllLists={closeAllLists} disabled={(localStorage.getItem('complete') === 'true' || currGuesses.current >= 4)}
-          show={filterShow} setShow={setFilterShow} />
+        <AlbumList arr={arianaJSON} click={guessAlbum} closeAllLists={closeAllLists} disabled={(localStorage.getItem('covercomplete') === 'true' || currGuesses.current >= 4)}
+          show={filterShow} setShow={setFilterShow} filter={false} />
       </div>
       <div className='coverAttempts'>
         {attempts}
       </div>
       <button onClick={async () => await fetch('/api/covers/delete', { method: 'DELETE' })}>delete all db entries</button>
+      <Link to='/'>homepage</Link>
     </div>
   )
 }
