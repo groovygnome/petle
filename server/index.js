@@ -10,6 +10,13 @@ app.use('/deezer/:trackId', async (req, res) => {
   res.json(data);
 });
 
+app.use('/lyrica/:artist/:song', async (req, res) => {
+  const result = await fetch(`https://test-0k.onrender.com/lyrics/?artist=${req.params.artist}&song=${req.params.song}`);
+  const data = await result.json();
+  let lyrics = data.data.lyrics.split('\n');
+  res.json(lyrics);
+});
+
 app.use('/api', dailyRoute);
 
 const PORT = 3001;

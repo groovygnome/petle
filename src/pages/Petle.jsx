@@ -17,6 +17,7 @@ function Petle() {
   const [answer, setAnswer] = useState({});
   const [acDivs, setacDivs] = useState([]);
   const deezerRef = useRef(null);
+  const lyricRef = useRef(null);
   const currGuesses = useRef(-1);
   const arianArray = useRef(structuredClone(arianaJSON));
 
@@ -52,9 +53,16 @@ function Petle() {
       let answerInfo = getTrackInfo(todayAnswer, arianaJSON);
       setAnswer(answerInfo);
 
-      const result = await fetch(`/deezer/${answerInfo.deezerId}`);
-      const data = await result.json();
-      deezerRef.current = new Audio(data.preview);
+      const deezerRes = await fetch(`/deezer/${answerInfo.deezerId}`);
+      const deezerData = await deezerRes.json();
+      deezerRef.current = new Audio(deezerData.preview);
+
+      const lyricRes = await fetch(`/lyrica/Ariana%20Grande/${answerInfo.trackTitle}`);
+      const lyricData = await lyricRes.json();
+      let lyricInd = Math.floor(Math.random() * (lyricData.length - 2)) + 1;
+      if (localStorage.getItem('lyricInd') != null) lyricInd = Number(localStorage.getItem('lyricInd'));
+      else localStorage.setItem('lyricInd', lyricInd);
+      lyricRef.current = [lyricData[lyricInd - 1], lyricData[lyricInd], lyricData[lyricInd + 1]];
     }
 
     getPetle();
@@ -152,8 +160,9 @@ function Petle() {
         }
       </div>
       <div id='hints'>
-        <Hint guessAmt={3 - currGuesses.current} audio={false} coverArt={answer.img} />
-        <Hint guessAmt={5 - currGuesses.current} audio={true} deezerRef={deezerRef} />
+        <Hint guessAmt={2 - currGuesses.current} type='coverArt' coverArt={answer.img} />
+        <Hint guessAmt={4 - currGuesses.current} type='lyric' ref={lyricRef} />
+        <Hint guessAmt={6 - currGuesses.current} type='audio' ref={deezerRef} />
       </div>
       <button onClick={async () => await fetch('/api/dailies/delete', { method: 'DELETE' })}>delete all db entries</button>
       <Link to='/coverArt'>guess the cover</Link>

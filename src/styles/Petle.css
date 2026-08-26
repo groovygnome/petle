@@ -95,7 +95,7 @@ body{
 
 #hints{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 3fr 1fr;
   gap: 2rem;
 }
 
@@ -106,6 +106,7 @@ body{
   align-items:center;
   width: 6.5vw;
   height: 6.5vw;
+  align-self:center;
 }
 
 .hint > img{
@@ -120,6 +121,13 @@ body{
 
 .hint{
   border-radius: 1rem;
+}
+
+#lyricHint{
+  width: 19.5vw;
+  height: 10vw;
+  flex-direction:column;
+  justify-content: space-around;
 }
 
 .used{

@@ -8,6 +8,7 @@ export default defineConfig({
     proxy: {
       '/api': 'http://localhost:3001',
       '/deezer': 'http://localhost:3001',
+      '/lyrica': 'http://localhost:3001',
     },
   },
 })
